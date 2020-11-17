@@ -1,0 +1,952 @@
+,0,1
+0,mpn,21046
+1,brand,41892
+2,bed size,19133
+3,color,32101
+4,pattern,19862
+5,room,3457
+6,type,25784
+7,material,26665
+8,threadcount,3129
+9,model,10324
+10,country of manufacture,713
+11,upc,6703
+12,country/region of manufacture,12486
+13,pillowcase size,10933
+14,size,13511
+15,style,11604
+16,modified item,3339
+17,custom bundle,3663
+18,non-domestic product,1811
+19,thread count,8842
+20,bundle description,199
+21,ean,4538
+22,productgroup,2692
+23,dimensions,317
+24,binding,907
+25,weight,473
+26,isbn,2879
+27,manufacturer,4138
+28,category,1831
+29,style name,63
+30,theme,1282
+31,designer,36
+32,model number,506
+33,label,2360
+34,publisher,2265
+35,partnumber,1462
+36,item weight,1474
+37,package dimensions,696
+38,shipping weight,1409
+39,manufacture_country,52
+40,size type,191
+41,item model number,643
+42,numberofitems,298
+43,set includes,564
+44,product line,318
+45,stock color,2
+46,item width,461
+47,item length,561
+48,number of items in set,369
+49,personalized,634
+50,insulation,105
+51,features,1965
+52,department,1226
+53,closure type,100
+54,character family,342
+55,care instructions,1358
+56,fill material,81
+57,shape,1061
+58,item_length,424
+59,item_width,423
+60,shipping,789
+61,fast shipping,6
+62,questions,7
+63,delivery,115
+64,quality assurance,6
+65,product dimensions,795
+66,tax,748
+67,ts,1
+68,gsm grams per square meter,174
+69,shipping exclusion,5
+70,character,202
+71,gender,129
+72,quantity,1251
+73,designer/brand,2058
+74,item condition,58
+75,seller,141
+76,buyer,15
+77,linens,17
+78,package quantity,82
+79,drop length,127
+80,asin,83
+81,package size,40
+82,unfold size,38
+83,origin,109
+84,gift,120
+85,domestic shipping,109
+86,money back,50
+87,use,161
+88,retail,82
+89,returns,99
+90,fabrication,5
+91,details,5
+92,bedsheet dimension,22
+93,bedsheet size,144
+94,sale for,87
+95,product,93
+96,used for,86
+97,pillow size,102
+98,labels & certifications,203
+99,life stage,316
+100,location,34
+101,characters,10
+102,care,505
+103,product material,397
+104,pocket depth,364
+105,feel,489
+106,weave,442
+107,note,186
+108,thread count for vizcon,83
+109,commercial use,28
+110,characteristics,1
+111,material type,25
+112,exact color,28
+113,product type,61
+114,ships from,58
+115,condition,4
+116,dimension,22
+117,special features,1
+118,https,1
+119,handlling time,1
+120,item location,37
+121,country of origin - components,65
+122,manufacturer part number,373
+123,assembled product dimensions l x w x h,73
+124,modification description,34
+125,applicable regions,26
+126,multipack quantity,4
+127,california prop 65 warning,98
+128,producttypesubcategory,57
+129,releasedate,43
+130,publicationdate,4
+131,number of pieces,38
+132,returnable,24
+133,pattern/theme,24
+134,pattern type,34
+135,linen type,25
+136,lifestage,24
+137,decor type,32
+138,color family,34
+139,bedding material,31
+140,certifications and listings,12
+141,customer service,87
+142,handling time,38
+143,no tax,80
+144,price,66
+145,main colour,10
+146,702.783.15; k,1
+147,pillow covers,2
+148,principal color,1
+149,bed sheet size,133
+150,pillow cover size,220
+151,pillow in set,39
+152,set include,53
+153,wash care,545
+154,object type,12
+155,pillow case thread count,3
+156,features 2,4
+157,vintage sampler design sheets,1
+158,vintage sampler design flat sheets,1
+159,dimension  cushion cover,27
+160,unit quantity,20
+161,usage,47
+162,bedding pattern,6
+163,year,17
+164,packaging,16
+165,sheet type,1
+166,item,90
+167,satisfaction,52
+168,hurry up and order,3
+169,image is for illustration purp,3
+170,quality,42
+171,we respond to messages in,5
+172,free shipping,21
+173,4-piece queen sheet set,2
+174,gifts,17
+175,season,15
+176,guarantee,1
+177,length,88
+178,shipping speed,4
+179,width,81
+180,height,29
+181,part number,11
+182,international shipping,78
+183,batteries included?,1
+184,batteries required?,1
+185,item package quantity,23
+186,fabric content,58
+187,country of origin - assembly,67
+188,dominant color,425
+189,matière,32
+190,giza 88 egyptian cotton,1
+191,free 100% satisfaction,1
+192,egyptian cotton,1
+193,construction is,1
+194,health friendly,1
+195,sku,31
+196,for use with,1
+197,itempackagequantity,1
+198,duvet cover size,1
+199,target audience,23
+200,no. of items in the set,8
+201,dimension bed sheet,3
+202,dimension pillow case,3
+203,comforter size,5
+204,fitted sheet size,11
+205,country of origin,11
+206,sizes,22
+207,mean colour,20
+208,85 x 96,1
+209,rustic,1
+210,100% cotton,2
+211,men's,2
+212,country,8
+213,cabin,2
+214,batteries required,14
+215,featured refinements,20
+216,return policy,56
+217,unit type,29
+218,state tax,1
+219,awesomeness level,56
+220,design,63
+221,elastic all around,6
+222,pocket size,44
+223,shelf,19
+224,color detail,5
+225,pocket on fitted sheet,5
+226,shams,1
+227,includes,26
+228,hem,20
+229,closure,41
+230,corners,52
+231,hem color,34
+232,fabric,65
+233,custom label,21
+234,project craft type,19
+235,purpose,1
+236,specification met,2
+237,shipment,20
+238,seller rank,20
+239,return accepted,18
+240,color 2,4
+241,color shade,2
+242,geometric,1
+243,beach cottage coastal,1
+244,size inches,11
+245,pretty suitable for,1
+246,package included,136
+247,bed sheet size.,67
+248,manufacture,10
+249,product width,3
+250,product weight,1
+251,product length,3
+252,product height,1
+253,transparency,431
+254,thickness,431
+255,washable,435
+256,unit of measurement,37
+257,ebay_category_suggestion,63
+258,retired ralph lauren bedding vintage,1
+259,easy care,11
+260,line,1
+261,dimension  bedsheet,11
+262,dimension  pillow cover,11
+263,wase care,9
+264,pattern / line,13
+265,item color,8
+266,set content,5
+267,size of pillow cover,3
+268,size of bedsheet,3
+269,bundle listing,9
+270,set of 6,1
+271,"""""hannah montana"""" full sheet set",1
+272,1.17 x h,1
+273,shipping cost,19
+274,1.04 x h,1
+275,name,4
+276,returnes,2
+277,ships_from,1
+278,feels so good !,1
+279,new/used,1
+280,additonal features,15
+281,country//region of manufacture,46
+282,package weight,11
+283,size-queen,4
+284,standard,6
+285,hotel quality,90
+286,deep pockets,90
+287,msrp,93
+288,other specifics,1
+289,bedroom,2
+290,-,6
+291,option,22
+292,"pr, hi, ak shipping",1
+293,sales tax,6
+294,p.o. box shipping,7
+295,customer support,7
+296,shipping 48 lower states,6
+297,cushion cover size,7
+298,product name,29
+299,regional design,26
+300,washing,26
+301,countryof manufacture,26
+302,m p n,26
+303,technique,38
+304,blush brown,1
+305,mainstays soft microfiber pillowcases standard 2 pack,1
+306,collection,17
+307,upc sku,6
+308,targeted audience,5
+309,product color,7
+310,pillow cover closure type,2
+311,textile construction,2
+312,license property,1
+313,cpsc choking hazard warnings,5
+314,shop by,2
+315,license personality,1
+316,bed,6
+317,textile wash recommendation,5
+318,textile dry recommendation,5
+319,pattern group,5
+320,assortment type,2
+321,licensor,1
+322,textile 1,3
+323,textile percentage 1,4
+324,item contain,20
+325,brand color,20
+326,dimensions_fitted_sheet,17
+327,pillow_cover_color,13
+328,dimensions_pillow_cover,17
+329,deep_pocket,16
+330,item offered,13
+331,age group,14
+332,set included,19
+333,pillow dimension,19
+334,material_type,4
+335,fitted sheet depth,3
+336,"2 pcs pillowcase with 4"""" hem cal.king",2
+337,1 pc flat sheet cal.king,2
+338,1 pc deep pocketed fitted sheet cal.king,2
+339,general condition,1
+340,secondary color,1
+341,product line collection,1
+342,how many pieces,5
+343,lead time to ship,5
+344,feature,21
+345,#,1
+346,type-sheets,2
+347,room/setting,2
+348,ac voltage,4
+349,occasion lifestyle,1
+350,assembled product weight,18
+351,approximate measurements,1
+352,cotton type,1
+353,special detail,1
+354,package contents,12
+355,dimension pillow cover,7
+356,dimension bedsheet,7
+357,size before hemming,2
+358,manufacturer_part_number,10
+359,payment,10
+360,list price,4
+361,gsm,6
+362,4-piece king fitted sheet set includes,6
+363,stain resistant,5
+364,hypoallergenic,9
+365,machine washable,9
+366,wrinkle resistant,8
+367,package include,5
+368,king,2
+369,comforter measures,3
+370,closure design,1
+371,warning,13
+372,4 piece brushed microfiber bed sheet set,1
+373,signature,13
+374,1 flat sheet 1 fitted sheet,1
+375,maker,11
+376,made in,5
+377,item material,3
+378,included,2
+379,warranty,4
+380,platform,2
+381,original,3
+382,edition,4
+383,rome,3
+384,envío gratis,10
+385,number of set,1
+386,fitted sheet is fully elasticized to ensure a secure,1
+387,service,32
+388,norisk guarantee,22
+389,best product,22
+390,exact colour,2
+391,garment care,2
+392,type of sheet,7
+393,to fit,3
+394,returm accepted,1
+395,selleer rank,1
+396,count,2
+397,invenory,1
+398,twin set contains,1
+399,king set,2
+400,multi-color,1
+401,1.37 x h,1
+402,size detail,2
+403,pattern no,9
+404,california residents,9
+405,pillow shape,1
+406,actual size / dimensions,1
+407,shelf id number,14
+408,disney characters,1
+409,genre,2
+410,description,1
+411,fitted sheet,14
+412,flat sheet,17
+413,1 standard mainstays microfiber pillowcase fresh ivory,1
+414,queen size satin bed sheets dimensions,4
+415,colors on sage green background,3
+416,deep pocket,3
+417,item name,2
+418,fitted sheet fabric texture,2
+419,feature4,2
+420,feature3,2
+421,feature2,2
+422,feature1,2
+423,fabric count,8
+424,grade,8
+425,package dimensions 11.1 x 9.6 x 3.7 inch,1
+426,collection extra soft botanical bright w,1
+427,1.14 x h,1
+428,combed cotton,1
+429,polyester,1
+430,never iron,1
+431,free shipping return,17
+432,no sale tax,17
+433,shipping from usa,17
+434,"send""""best offer"""" to add 1or more euro",1
+435,several sets may have line thru upc,1
+436,composition,3
+437,model no.,18
+438,product care,3
+439,finish,9
+440,king/calking set,1
+441,please note,3
+442,unknown- not on wrapper,1
+443,fitted sheet pocket depth,6
+444,edges,1
+445,set / single,1
+446,fitment,1
+447,item dimensions,6
+448,height inches,1
+449,width inches,3
+450,we usually ship within 3 business days,2
+451,technics,1
+452,flat l x w,3
+453,color fastness grade,2
+454,fit bed size,1
+455,retail msrp,1
+456,fits mattresses,3
+457,ak shipping,5
+458,store,1
+459,occasion,5
+460,ship from,2
+461,restocking fee,4
+462,sc,4
+463,care instruction,11
+464,for electrical appliances,4
+465,fast n' free shipping,5
+466,calking set,3
+467,twin / twinxl set,1
+468,4pc sheet set,1
+469,cabbage rose,3
+470,country////region of manufacture,3
+471,sheet,2
+472,pillowcase,3
+473,gray,1
+474,cannon industries,1
+475,colors,11
+476,case of,1
+477,features sheets,1
+478,textile material 1,3
+479,textile bleach use recommendation,3
+480,textile dry clean recommendation,2
+481,weave type,3
+482,bed product,2
+483,number of pieces in set,3
+484,abn size,2
+485,decor style,4
+486,decorative accents,1
+487,fabric treatment,1
+488,well packed,8
+489,fast and free,8
+490,60 days return,5
+491,tax free,8
+492,customer service response,8
+493,item's location,5
+494,free returns,4
+495,material composition,3
+496,packagequantity,9
+497,producttypename,9
+498,recommended location,6
+499,set of piece,1
+500,main character,2
+501,sell#,2
+502,1.13 x h,1
+503,1.375 x h,1
+504,standards,1
+505,item - crib,1
+506,crib size,1
+507,deep pocket sheets,1
+508,servicio,14
+509,usa shipping,14
+510,recommended age range,2
+511,band size,3
+512,cup size,3
+513,teddy bear,1
+514,handmade,4
+515,textile material 2,1
+516,amount,6
+517,washing instructions,9
+518,finished,1
+519,special attributes,1
+520,item code,9
+521,fabric care,7
+522,manufactuer,2
+523,is portable,1
+524,full money back guarantee,6
+525,safe packing,6
+526,eligible for return,6
+527,parent category,1
+528,item size,2
+529,shipping time,2
+530,what's included,2
+531,sexually suggestive,1
+532,obscene picture,1
+533,cottage,1
+534,floral,1
+535,western,1
+536,return's,1
+537,runner size,1
+538,royal green,1
+539,2 sheets,1
+540,flat,3
+541,colorname,2
+542,sizename,2
+543,brand -,1
+544,french country,1
+545,size in cms,2
+546,1.276 x h,1
+547,character/story/theme,5
+548,style or theme,5
+549,bed_size,2
+550,aztec style pillowcase,1
+551,return shipping will be paid by,5
+552,refund will be given as,4
+553,all returns accepted,4
+554,item must be returned within,4
+555,available for other character-art-image,2
+556,available for free custom,2
+557,available in all colors,2
+558,we have many stocks,2
+559,we also have other items not only it,2
+560,fits mattress size of,1
+561,item type,2
+562,nattljus fabric listed sep'ly by yard,1
+563,what you will not receive,1
+564,what you will receive,1
+565,item_package_quantity,7
+566,fabric type,6
+567,inventory location,2
+568,mattress depth,4
+569,cal king set,1
+570,luxury,1
+571,size on package,1
+572,related to 0027,1
+573,⦁ measures,1
+574,studio,8
+575,double flat sheet,1
+576,flat sheet size,4
+577,product width in.,2
+578,product depth in.,2
+579,color2,1
+580,pleated ruffle,1
+581,pair mainstays king sz 200 thread count violet pillowcases,1
+582,p.o box shipping,2
+583,floral fabric,2
+584,characters or studios,2
+585,article modified,1
+586,condition notes,1
+587,era,1
+588,indoor-outdoor use,1
+589,number of lights,1
+590,voltage,1
+591,special,3
+592,age,3
+593,bed linen type,1
+594,product_sku,1
+595,pic_sku,1
+596,main color,2
+597,finished size,2
+598,contact us,1
+599,multi,1
+600,crib type,3
+601,bottoms size men's,2
+602,publication year,1
+603,bottoms size women's,2
+604,serial number,2
+605,format,2
+606,product tax,1
+607,product shipping,1
+608,sticky note,3
+609,kitchen product type,1
+610,vintage solid white flat sheet vintage,1
+611,queen size 4pc set,1
+612,dog breed,2
+613,dogs,2
+614,number of items,4
+615,material_composition,2
+616,made in oeko-tex standard 100 factory an independent certificat,1
+617,500-thread-count weave,1
+618,100% pima cotton  from the same plant as egyptian cotton,1
+619,lister,1
+620,trademark,2
+621,product informaiton,1
+622,for any question,1
+623,pattern name,2
+624,70% polyester 30% cotton,1
+625,2 king shams / cases,1
+626,stripes reversible,1
+627,title,1
+628,dry clean or washable,2
+629,rn,2
+630,other,4
+631,other 2,1
+632,cache,1
+633,bed type,2
+634,item thread count,2
+635,holiday / occasion,1
+636,yves saint laurent,1
+637,offer includes,1
+638,piece 2 length,1
+639,piece 2 quantity,1
+640,piece 1 length,1
+641,piece 1 quantity,1
+642,piece 2 width,1
+643,piece 1 type,1
+644,piece 1 width,1
+645,piece 2 type,1
+646,easy to care,2
+647,sku2,2
+648,discontinued by manufacturer,8
+649,sub-genre,1
+650,series/ genre,1
+651,actual size,1
+652,bed pillow size,3
+653,is hypoallergenic,8
+654,hemstiching detail,1
+655,1.18 x h,1
+656,category section,1
+657,collection name,2
+658,rn#,1
+659,custom fit,4
+660,pattern / style,2
+661,suitable for,2
+662,pattern/style,4
+663,strength microfiber yarn,1
+664,elephant,1
+665,toile,1
+666,lion,1
+667,original/reproduction,2
+668,type of advertising,1
+669,date of creation,1
+670,feature 2,2
+671,style 2,1
+672,feature 4,1
+673,feature 3,2
+674,name2,1
+675,shipping fee,1
+676,availability,2
+677,additional features,1
+678,but may have line thru,1
+679,queen size 6pc bed sheets set,1
+680,sub type,3
+681,buyers,1
+682,item brand,3
+683,store category,2
+684,manufactured by,3
+685,fabric detail,1
+686,sizel x w,4
+687,calvin klein oxidized,1
+688,quilt- 80% polyester/20% cotton fill,1
+689,expedited,1
+690,return,2
+691,release date,1
+692,fees,1
+693,q/a,1
+694,damask,1
+695,cabbage roses,1
+696,inventory #,3
+697,collection / pattern name,1
+698,moisture resistant,2
+699,shipping information,1
+700,to fit pillows,1
+701,the first americans,1
+702,design name,1
+703,one person,1
+704,feature requirement,1
+705,accurate color,2
+706,pillow case size,2
+707,home,1
+708,rn #,1
+709,pack / size,1
+710,model #,2
+711,use for,1
+712,measurements,3
+713,quilting,1
+714,full double,1
+715,main ingredient,1
+716,pattern edition,2
+717,size-king,4
+718,order includes,1
+719,color note,2
+720,ethnicity,1
+721,doll size,1
+722,doll gender,1
+723,shipping advisory,1
+724,pillow case measures,1
+725,fitted sheet measures,1
+726,comforter fill type,1
+727,go to https,1
+728,for,1
+729,assembled_product_weight,1
+730,materialtype,1
+731,soft,1
+732,uses,2
+733,package content,3
+734,pocket drop,1
+735,2-3 days shipping,2
+736,1 queen size fitted sheet,1
+737,queen,1
+738,shipping from,3
+739,colour,1
+740,seller sku,1
+741,oeko-tex standard100 sho25 129841 testex,1
+742,cannon,2
+743,quality ?,5
+744,free and fast shipping ?,6
+745,easy to use ?,5
+746,ships from usa ?,5
+747,free tax ?,6
+748,inventory,6
+749,"32""""",1
+750,pocked on fitted sheet,1
+751,fitted sheet pocket,2
+752,main category,1
+753,production year,1
+754,material type 1,2
+755,fragrance name,1
+756,customer reviews,1
+757,best sellers rank,1
+758,what you won't get,1
+759,circled in red! no other of the items avail,1
+760,which you get,1
+761,what you will get,1
+762,20,1
+763,return accept,2
+764,package includes,1
+765,set,4
+766,durability,1
+767,softness,1
+768,sub-type,2
+769,1.21 x h,1
+770,preshrunk,1
+771,which is known to the state of california to cause,1
+772,dismantle the product packing,2
+773,unitcount,2
+774,net weight,2
+775,"60"""" x 80"""" ~ flat",1
+776,sferra genna king flat,1
+777,fabric material,1
+778,distributed by,2
+779,year of manufacture,2
+780,bed skirt drop,1
+781,big sale,2
+782,in our store,1
+783,postage,2
+784,any equations?,1
+785,easy care instructions,1
+786,deep pockets with wrap around elastic ensure,1
+787,and fade,1
+788,do not bleach or use fabric softener.,1
+789,100% brushed microfiber,1
+790,lightweight material,1
+791,a 76 x 80 inch king,1
+792,100% warranty and best service,1
+793,fast delivery 24h support,1
+794,expiration date,1
+795,length inches,2
+796,designs,1
+797,the following warning applies only to the exterior packaging and not the product enclosed.  warning,1
+798,1 fitted sheet,1
+799,4 pillowcases,1
+800,upc#,2
+801,seal of quality,1
+802,movie,1
+803,made in bahrain,1
+804,product - brand,2
+805,detail,2
+806,include,3
+807,king cotton pillowcase set,1
+808,country / where made,1
+809,item threadcount,2
+810,3pc sheet set,1
+811,waterproof,1
+812,salvapipi,1
+813,fits pillow,1
+814,size of fitted sheet,2
+815,size of bed sheet,2
+816,size of pillowcase,2
+817,ship to,1
+818,shipped by,1
+819,any size,1
+820,number of pillowcases,1
+821,brand/artist,2
+822,product group,1
+823,gorgeous 1st quality sheet.,1
+824,team,3
+825,khaki tan/wheat with blue windowpane,1
+826,great for,1
+827,money back guarantee,1
+828,product work,1
+829,uses for,1
+830,bundle,1
+831,product location,1
+832,pr & ak shipping,1
+833,about us,1
+834,shipping 48 lower us states,1
+835,payments,1
+836,ebay seller inventory #,1
+837,dated,1
+838,gtin,3
+839,6pc queen sheet set includes,1
+840,cou,1
+841,sheet's measure approximately,1
+842,listed separately-many decor/bedding,1
+843,also perfect for making curtains-,1
+844,seller's notes,1
+845,concerns,1
+846,100% polypropylene/film,1
+847,double row of 2-tone satin stitch embroidery,1
+848,can be used as,1
+849,known as,1
+850,roses,1
+851,featherlite,1
+852,decade,2
+853,product highlight 2,1
+854,product highlight 1,1
+855,fiber content,2
+856,care instructions 1,1
+857,lagon,1
+858,design/finish,2
+859,rkwpkw,1
+860,items,1
+861,any equations ?,1
+862,"mainstays 2 standard red plaid pillowcases 20x26""""",1
+863,cupcake pillowcase,1
+864,product tyoe,1
+865,language,1
+866,items weight,1
+867,ages,1
+868,california prop. 65 warning,1
+869,fitted sheet pocket deep,1
+870,other colors,1
+871,full double fitted sheet,1
+872,textile iron recommendation,1
+873,top quality ?,1
+874,price ?,1
+875,perfect for,1
+876,feature 1,1
+877,24/7 customer service 100%,1
+878,ships from ?,1
+879,bad size,1
+880,tan,1
+881,back to college,1
+882,hard to find sizes,1
+883,loc,1
+884,any questions?,1
+885,simple use,1
+886,package qty,1
+887,product family id,1
+888,product features,1
+889,sheet size,1
+890,sham,1
+891,"approx 12"""" tuck",1
+892,los angeles,1
+893,product lable,1
+894,retail price,1
+895,vtg tastemaker no iron lemon full flat s,1
+896,vintage wamsutta ultracale,1
+897,vintage fieldcrest duracale,1
+898,vintage cannon royal family,1
+899,vintage,1
+900,features 3,1
+901,total number of pieces,1
+902,audience,1
+903,90 inch x 90 inch; pillow cover,1
+904,lining material,1
+905,fits,1
+906,linen/bedding return policy,1
+907,new,3
+908,twin and twin xl set come with,1
+909,league,1
+910,product height in.,1
+911,package_length,1
+912,pocket deep fit,1
+913,package include item,1
+914,beach,1
+915,queen size dimensions,2
+916,twin set include,1
+917,& king set include,1
+918,4 piece set,1
+919,catalognumberlist,1
+920,no iron percale,1
+921,utica fine arts,1
+922,jets,1
+923,type-bedding,1
+924,size women's,1
+925,vtg percale no iron twin flat sheet new,1
+926,country of manufacturer,1
+927,item care,1
+928,pockets,1
+929,allergy proof fabric prevents,1
+930,pillow material,1
+931,queen size envelope pillowcases,1
+932,dimensionss,1
+933,wash,1
+934,looks great w/ikea duvets,1
+935,what we offer,1
+936,rise,1
+937,print,1
+938,army green,1
+939,fabric density,1
+940,fitted bed sheet size,1
+941,application size,1
+942,now retired,1
+943,sloc,1
+944,great value,1
+945,twin / twinxl set contains,1
+946,yellow pink green ivory,1
+947,machine wash cold cycle,1
+948,designed to fit extra thick mattress,1
+949,designer queen sheet set,1
+950,code,1

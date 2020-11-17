@@ -1,0 +1,2270 @@
+,0,1
+0,filters,5184
+1,model,14883
+2,country/region of manufacture,3040
+3,brand,30521
+4,mpn,26220
+5,upc,10914
+6,style,748
+7,type,13136
+8,cord type,7685
+9,bagged/bagless,6670
+10,isbn,4066
+11,ean,7993
+12,power,2300
+13,model no.,81
+14,tax,714
+15,shipping,885
+16,model number,498
+17,manufacturer,4469
+18,color,6617
+19,category,760
+20,modified item,2506
+21,non-domestic product,1208
+22,custom bundle,2881
+23,bag/bagless,1042
+24,label,1107
+25,dimensions,462
+26,numberofitems,617
+27,weight,782
+28,binding,1151
+29,productgroup,1260
+30,partnumber,809
+31,features,5046
+32,peak horsepower,307
+33,manufacturer warranty,398
+34,interior hose diameter in.,205
+35,included accessories,1136
+36,hose length ft.,273
+37,floor care features,379
+38,filter type,758
+39,cord length ft.,591
+40,amperage amps,654
+41,air volume cfm,460
+42,accessories/parts included,246
+43,voltage volts,431
+44,vacuum capacity gallons,343
+45,product width in.,390
+46,product weight lb.,173
+47,product height in.,400
+48,product depth in.,400
+49,certifications and listings,48
+50,battery size,95
+51,battery power type,64
+52,cordless/ corded,197
+53,batteries included,42
+54,cordless tool type,32
+55,motor type,30
+56,tools product type,70
+57,variable speed,36
+58,3.525 x h,1
+59,item weight,2479
+60,package dimensions,514
+61,shipping weight,2408
+62,bundle listing,681
+63,customer service,138
+64,size,802
+65,product line,5
+66,batteries,796
+67,voltage,1461
+68,product dimensions,2062
+69,item model number,1770
+70,publisher,1069
+71,releasedate,168
+72,california prop 65 warning,271
+73,department,228
+74,item_width,853
+75,item_length,907
+76,free shipping,41
+77,shipping from usa,14
+78,free shipping return,14
+79,no sale tax,14
+80,runtime,244
+81,charge time,217
+82,amplifier type,1
+83,compatible guitar,1
+84,manufacturerpartnumber,13
+85,assembled product dimensions l x w x h,180
+86,recommended surface,202
+87,manufacturer part number,865
+88,manufacturer_part_number,65
+89,bagbagless,8
+90,color category,128
+91,item location,53
+92,amperage,136
+93,wattage,270
+94,motor warranty,69
+95,location,21
+96,manufacturer product id,20
+97,manufacturer name,20
+98,warranty,230
+99,ship from,20
+100,catalognumberlist,5
+101,studio,27
+102,producttypename,27
+103,date first available,30
+104,cover included,16
+105,special features,144
+106,model #,146
+107,size name,23
+108,cleaning range with toolsft.,42
+109,assembly required,109
+110,color family,698
+111,input voltage,97
+112,car vacuum cleaner,4
+113,suction,57
+114,returnable,444
+115,batteries included?,162
+116,batteries required?,175
+117,part number,205
+118,item package quantity,195
+119,usage,115
+120,material,480
+121,accessoriesparts included,39
+122,safe for use on,295
+123,tank capacity,13
+124,voltage v,146
+125,smart home compatibility,145
+126,power w,27
+127,certification,78
+128,smart home protocol,199
+129,function,31
+130,installation,33
+131,use,239
+132,price,77
+133,seller,168
+134,gift,175
+135,international shipping,238
+136,origin,133
+137,domestic shipping,276
+138,delivery,180
+139,money back,115
+140,asin,158
+141,cordless,52
+142,surface type,129
+143,product type,234
+144,intelligently navigates your home,2
+145,dual multi-surface brushes,2
+146,home base charging station,2
+147,configuration,34
+148,category type,13
+149,runs for up to 90 minutes,2
+150,irobot roomba 675,2
+151,robot weight,8
+152,robot dimensions,7
+153,works with amazon alexa,2
+154,irobot limited warranty north america,2
+155,and suctions dirt from your floors,2
+156,1 flat cleaning tool,2
+157,duster crevice tool,4
+158,battery warranty,2
+159,pet multi-tool,2
+160,multiflex under-appliance wand,3
+161,charging dock,2
+162,vacuum warranty,2
+163,maximum dirt capacity,2
+164,anti-allergen dust brush,3
+165,shipping advisory,38
+166,width inches,7
+167,vacuum type,55
+168,compliance-ca prop 65 chemical,2
+169,height inches,6
+170,length inches,5
+171,payment,11
+172,shipping cost,16
+173,processing time,4
+174,shipping & handling,4
+175,power source,199
+176,capacity,468
+177,battery,61
+178,run time,14
+179,nominal capacity,1
+180,bag/without bag,160
+181,colour main,185
+182,pieces included,33
+183,product size,127
+184,energy rating,72
+185,name style,18
+186,weight of the product,165
+187,noise,210
+188,time of works,9
+189,dimensions of the product,131
+190,special suction nozzle,27
+191,dust storage type,22
+192,product tax,30
+193,product shipping,28
+194,size type,73
+195,edition,3
+196,bundle description,234
+197,energy efficiency,31
+198,with bag/bagless,20
+199,name,7
+200,hepa filter size,4
+201,foam & felt filter size,4
+202,protocol house connected,7
+203,dimensions of the package,36
+204,announcement of set,5
+205,filter,25
+206,time of charging,4
+207,amount of pieces,7
+208,supply power,10
+209,type cable,18
+210,dirt capture,108
+211,language,13
+212,feature,40
+213,sku,71
+214,affordability,2
+215,best for,2
+216,handling time,64
+217,quality,57
+218,cord length,292
+219,refund,146
+220,return,188
+221,container capacity,23
+222,battery type,61
+223,character family,4
+224,surface use,3
+225,ac voltage,15
+226,integrated,3
+227,vacuum degree,41
+228,input current,20
+229,integrated led,3
+230,high quality filter,3
+231,power cord length,178
+232,n.w/g.w,2
+233,warranty description,123
+234,product dimension,8
+235,lead time to ship,7
+236,returns,121
+237,product location,6
+238,payments,6
+239,p.o. box shipping,15
+240,pr & ak shipping,5
+241,shipping 48 lower us states,6
+242,about us,6
+243,customer support,15
+244,power type,10
+245,cleaning path size,5
+246,unit quantity,4
+247,package quantity,268
+248,cleaning path,116
+249,body material,42
+250,height,247
+251,length,242
+252,width,173
+253,object type,49
+254,brushroll shutoff,58
+255,hose length,241
+256,nozzle width,90
+257,product weight,155
+258,2 prong plug,2
+259,interior hose diameter in,18
+260,product height in,44
+261,product weight lb,19
+262,product width in,43
+263,operation style,77
+264,brush bristle type,100
+265,number of attachments,138
+266,horsepower hp,36
+267,hose length ft,39
+268,hose diameter in,30
+269,number of filters,71
+270,number of wheels,71
+271,product depth in,40
+272,consumption annual,6
+273,colour,51
+274,warning,146
+275,tools included,93
+276,ฺฺby,1
+277,from the country,1
+278,clean range,7
+279,rated power,33
+280,max amperage,1
+281,work time by full energy,3
+282,plug profile,2
+283,extension length,3
+284,sound level,4
+285,dirt capturing method,4
+286,main colour,14
+287,packagequantity,23
+288,decibel,10
+289,net weight,160
+290,low noise,3
+291,handle material,4
+292,horsepower,47
+293,number of handles,27
+294,maximum pressure,3
+295,machine height,144
+296,in the box 4,96
+297,in the box 3,127
+298,in the box 2,144
+299,machine length,144
+300,in the box 1,147
+301,box weight,126
+302,rated voltage,38
+303,1.717 x h,2
+304,number of batteries required,65
+305,detachable battery,27
+306,battery life min,49
+307,stick vacuum type,26
+308,pattern name,8
+309,battery life hours,42
+310,model',22
+311,hose diameter in.,75
+312,attachments included,34
+313,haz-mat,50
+314,bullet point 2,49
+315,bullet point 3,49
+316,bullet point 1,50
+317,bullet point 4,46
+318,bullet point 5,34
+319,prop 65,52
+320,keywords,51
+321,bullet point 6,22
+322,country of origin,59
+323,pack quantity,50
+324,carpet cleaner type,6
+325,cleaning tank capacity gallons,6
+326,collecting tank capacity gallons,6
+327,brand name,57
+328,other feature,10
+329,money back guarantee,5
+330,perfect for,6
+331,modification description,108
+332,gifts,36
+333,season,27
+334,satisfaction,85
+335,removable nozzle for,1
+336,noise level db,10
+337,shipping 48 lower states,9
+338,ak shipping,11
+339,sales tax,21
+340,cable or cord length,9
+341,packqty,1
+342,recommended surface application,14
+343,capacity total volume,2
+344,countryregion of manufacture,73
+345,feature 6,1
+346,feature 4,6
+347,feature 3,11
+348,feature 2,15
+349,support,3
+350,feature 1,7
+351,name 1,1
+352,feature 7,1
+353,feature 8,1
+354,name 3,1
+355,name 2,1
+356,feature 5,4
+357,hepa filter,44
+358,rotation speed rpm,3
+359,unit of measure,8
+360,style name,110
+361,item condition,12
+362,vaccum capacity,10
+363,restocking fee,78
+364,baggedbagless,61
+365,measurement system,31
+366,finish,21
+367,included components,67
+368,lifein339,4
+369,bag//bagless,16
+370,fast n' free shipping,4
+371,material type,16
+372,sale tax,2
+373,authentic items,1
+374,1.55 x h,3
+375,normal charging time,1
+376,battery capacity,67
+377,compatible brand,17
+378,product group,41
+379,car vacuum cleaner type,18
+380,product model,16
+381,bluetooth compatibility,4
+382,case included,2
+383,wifi compatibility,2
+384,charger included,4
+385,air flow cfm,20
+386,etl safety,1
+387,sealed pressure water lift,5
+388,series,119
+389,ul safety,1
+390,hose diameter,26
+391,csa safety,2
+392,powered tool power source,2
+393,dust box volume,15
+394,water tank volume,7
+395,cleaning time,56
+396,charging time hours,38
+397,running noise,44
+398,charging time,67
+399,working time,47
+400,waterproof rate,2
+401,product,18
+402,product weigh,2
+403,energy star,18
+404,dimensions hxwxd,23
+405,machine width,136
+406,hygiene filter,8
+407,filters other,76
+408,maximum reach,37
+409,dimensions inches hxwxd,36
+410,sensor,1
+411,charging,2
+412,cable length,13
+413,feature1,1
+414,feature2,1
+415,dimension,42
+416,battery type required,35
+417,voice control hub required,7
+418,power options,8
+419,remote access,5
+420,requires hub?,9
+421,smart home,8
+422,works with,8
+423,in the box 5,71
+424,cleaner head,30
+425,california residents,123
+426,bag capacity/dry volume cu. ft.,32
+427,dust collection product type,34
+428,manufacture,15
+429,manufacturer recommended age,28
+430,power supply,45
+431,power consumptioncharging stand,2
+432,package_length,30
+433,replacement filter style,1
+434,realweight,37
+435,number of pieces,22
+436,design,43
+437,item dimension,8
+438,cleaning path width,16
+439,product width,19
+440,number of speeds,17
+441,battery 1 quantity,5
+442,product depth,19
+443,product height,18
+444,product color,16
+445,volume,11
+446,battery 1 material,9
+447,bagless,26
+448,wet / dry surfaces,20
+449,steam cleaner,20
+450,powered head,19
+451,pets,19
+452,hand tool,19
+453,flooring,20
+454,discount,2
+455,cable lenght,11
+456,washable,3
+457,12 v,3
+458,lasting time,2
+459,item size,20
+460,brush height,2
+461,package size,24
+462,package weight,43
+463,assembled product weight,85
+464,noise rate,28
+465,dust box capacity,44
+466,charging type,25
+467,clearing area,20
+468,vacuum cleaner for car color,2
+469,electric cord,14
+470,high performance motor,15
+471,vacuum cleaner for car material,2
+472,vacuum cleaner for car motor,2
+473,high quality hepa filter,13
+474,vacuum cleaner for car power,2
+475,ideal tool to clean,18
+476,custom1,6
+477,shipmentnumber,7
+478,items included,2
+479,for,16
+480,item,199
+481,includes,190
+482,for use with,49
+483,height adjustment,43
+484,hood height,26
+485,light,32
+486,plug,44
+487,vacuum bag type,42
+488,vacuum capacity,83
+489,vacuum product grouping,78
+490,handle,40
+491,furniture guard,31
+492,sound level dba,142
+493,attachments,56
+494,amps,208
+495,air flow,148
+496,vacuum filter,72
+497,standards,106
+498,hz,95
+499,average brush life,53
+500,dry capacity,55
+501,wet capacity,1
+502,static pressure,98
+503,tank material,48
+504,number of motor stages,90
+505,drain,55
+506,hose dia.,114
+507,casters,73
+508,applicable regions,85
+509,remote control,41
+510,use way,1
+511,timing reservation,27
+512,22.2v charging voltage,1
+513,bag or bagless,19
+514,sizemm,31
+515,lcd,16
+516,cord length m,24
+517,cleaning route,37
+518,in the box 7,49
+519,in the box 6,55
+520,custom label,12
+521,questions,6
+522,gender,10
+523,age group,1
+524,product modle,1
+525,subject,3
+526,topic,3
+527,power cord,5
+528,cup container,2
+529,suit for,4
+530,water tank,6
+531,operation time,3
+532,timer,2
+533,nominal output current,8
+534,nominal output voltage,8
+535,output power,9
+536,working voltage,26
+537,machine power,10
+538,input frequency,8
+539,dust collection box capacity,10
+540,itempartnumber,7
+541,eligible for return,7
+542,quantity,36
+543,return / money back,2
+544,100% satisfaction guaranteed,1
+545,capacity of dust container,3
+546,working time standard / advanced,3
+547,input voltage adapter,3
+548,charging voltage,13
+549,version,3
+550,charging current,3
+551,return policy,32
+552,no tax,44
+553,free and fast shipping,3
+554,frequency,16
+555,vacuum cleaner type,8
+556,cleans hard to reach places,6
+557,extra side brush,6
+558,limited warranty,5
+559,navigates an entire level of your home,6
+560,sensors prevention,6
+561,1 dual mode virtual wall barrier,6
+562,1 extra filter,6
+563,2 aa batteries,6
+564,5 times the air power,6
+565,bin empty alerts,6
+566,irobot home app,6
+567,charging station,27
+568,envío gratis,15
+569,country of manufacture,46
+570,counttry/region of manufacture,2
+571,side brush,3
+572,warranty - labor,26
+573,warranty - parts,26
+574,number of variations,1
+575,motor power,1
+576,in the box 8,33
+577,strap width in.,6
+578,strap length in.,3
+579,duoclean technology,2
+580,dimensions l x w x h,7
+581,anti-allergen complete seal technology,2
+582,led headlights,2
+583,powered-lift away technology,2
+584,multi-floor performance,2
+585,watts,20
+586,advanced swivel steering,2
+587,hertz,8
+588,fingertip controls,2
+589,warehouse,26
+590,fast,26
+591,in the box 9,9
+592,packing,7
+593,folding,12
+594,bagged / bagless,1
+595,charging method,29
+596,vacuum suction value,22
+597,the output voltage,12
+598,battery type included,18
+599,battery capacity mah,22
+600,host rated power,27
+601,cleaning mode,14
+602,materials,34
+603,panel process,25
+604,side brush length,7
+605,walking speed,19
+606,count,9
+607,variation specifics,6
+608,hsvj415jmbf22,1
+609,commercial or residential certifications,4
+610,clothingsize,13
+611,scope of work,2
+612,battery life,30
+613,include,2
+614,free returns,11
+615,manufacturer number,43
+616,filter washable,28
+617,maximum vacuum,2
+618,maximum volume of the dustbin,1
+619,operating mode,47
+620,system,52
+621,type bursten/dusen,18
+622,dustbin,21
+623,display technology,38
+624,headroom,31
+625,battery - /battery type,22
+626,expiration date,5
+627,year of manufacture,2
+628,pattern,6
+629,national stock number,9
+630,amps required,10
+631,wattage required,7
+632,vacuum attachments,11
+633,total volume,7
+634,bag type,32
+635,assortment type,11
+636,assembly details,7
+637,usa warehouse,1
+638,other eu countries,1
+639,other american countries,1
+640,eu warehouses,1
+641,au warehouse,1
+642,shipping methods,1
+643,lopcation,1
+644,option,136
+645,2.15 x h,1
+646,measurement range,1
+647,turbo boost gauge size,1
+648,length of pvc hose,1
+649,unit,1
+650,turbo boost gauge weight,1
+651,rated speed,20
+652,product name,3
+653,package weight approx.,5
+654,battery model,7
+655,suitable for,35
+656,fast delivery 24h support,1
+657,powered by,3
+658,gtin,20
+659,hard floor cleaning class,12
+660,energy efficiency class,12
+661,maximum performance,9
+662,model name / indicator,11
+663,packing dimensions wxhxd cm,11
+664,filter change indicator,3
+665,radius,14
+666,sound power level,17
+667,suction power,29
+668,dust container,18
+669,dust emission class,7
+670,dust level indicator,4
+671,filter bag capacity,5
+672,telescopic tube,10
+673,w,1
+674,high performance,1
+675,compatible with,6
+676,best,1
+677,best product,17
+678,norisk guarantee,16
+679,service,21
+680,ships from,53
+681,total unit operating radius ft.,11
+682,automatic docks and recharges,3
+683,aeroforce 3-stage cleaning system,3
+684,captures 99% of allergens pollen,3
+685,dual counter-rotating,3
+686,cleans on schedule,3
+687,sweeps along wall edges,3
+688,cliff-detect sensors,3
+689,optical & acoustic sensors,3
+690,cleans all floor type,3
+691,expedited,1
+692,tank size gallons,16
+693,filtration type,17
+694,cache,1
+695,dirt storage,17
+696,main color,3
+697,emergency power supply system,1
+698,mems detection system,1
+699,turbo brush,3
+700,dust box capacity l,8
+701,size women's,49
+702,size men's,49
+703,bottoms size men's,51
+704,bottoms size women's,50
+705,intimates & sleep size women's,49
+706,us shoe size women's,49
+707,us shoe size men's,49
+708,shape,11
+709,switch style,5
+710,cleaning area,10
+711,main material,9
+712,proposition 65 warning for california consumers&lt;br&gt;&lt;br&gt;warning,6
+713,diameter in.,1
+714,capacity gallons,2
+715,part numbers,2
+716,battery operated?,2
+717,cleaning areas,6
+718,item weight range,1
+719,cleaning width,8
+720,number of amps,2
+721,number of height adjustments,2
+722,number of motor speeds,2
+723,suction type,1
+724,telescopic handle,1
+725,cord storage,1
+726,warranty period,2
+727,built in lithium battery,1
+728,dust capacity,16
+729,dc voltage,2
+730,liquid capacity,2
+731,listprice,6
+732,searsusedefaultprice,6
+733,siteprice,6
+734,productname,6
+735,noise db,4
+736,suction pa,4
+737,self charging,4
+738,inventory row,2
+739,quality assurance,3
+740,fast shipping,4
+741,type of cleaner,17
+742,inventory,4
+743,item warranty,1
+744,aplication,1
+745,number in pack,14
+746,features special,31
+747,radio of action,12
+748,hp,8
+749,item dimensions,15
+750,3.475 x h,1
+751,productid,7
+752,first charging time,1
+753,wet and dry dual used,1
+754,applicable area,5
+755,each time continuous operation,1
+756,cleaning product type,2
+757,cable lengthapprox,3
+758,weigh,3
+759,rated input power,7
+760,bin,4
+761,country//region of manufacture,15
+762,signed,3
+763,personalized,3
+764,shipping policy,1
+765,filtration technology,10
+766,chemical composition,2
+767,battery voltage,7
+768,volts,12
+769,brush type,1
+770,cord lenght,3
+771,number of speed,8
+772,capacity dust,2
+773,voltage of entry ac,6
+774,max clean area one time,2
+775,absorption capacity,2
+776,handaling time,13
+777,format,32
+778,product quality,14
+779,power cord length feet,15
+780,primary hose length feet,14
+781,sealed pressure inches,14
+782,built-in pump,7
+783,built-in drain,9
+784,corded/cordless,6
+785,weight lbs.,10
+786,built-in attachment storage,9
+787,transport handle,10
+788,lift-out blower,7
+789,hose and accessory diameter,16
+790,wireless cleaner,1
+791,radio,2
+792,max. reach,1
+793,bin volume,1
+794,container type,5
+795,item_package_quantity,4
+796,bagged-bagless,5
+797,cord length ft,22
+798,amp,4
+799,search lights,1
+800,not ship,11
+801,dust tank capacity,7
+802,kit accessories,9
+803,motor,21
+804,secondary hose diameter,7
+805,secondary hose length,9
+806,bullet point 7,12
+807,as legislated for california residents only,4
+808,bundled items,8
+809,compatible product line,6
+810,bullet point 8,5
+811,peak hp,74
+812,tank size,22
+813,depth,26
+814,product highlight 3,2
+815,product highlight 2,2
+816,title,13
+817,msrp,5
+818,applicationusage,2
+819,model no,4
+820,and small attachment as shown. note,1
+821,rated rev.,1
+822,built-in battery capacity,1
+823,automatic shut-off,19
+824,air volume,9
+825,dust bin capacity,5
+826,1.9 x h,1
+827,designer/brand,3
+828,hub required,6
+829,tank / bag capacity,1
+830,attachment type,6
+831,additional hose,4
+832,dirt captûre method,4
+833,manufacture_country,24
+834,icn,3
+835,cfm,12
+836,battery amp hours,31
+837,mountable,1
+838,mountable vacuum cleaner,1
+839,sides brush,10
+840,lock,1
+841,net quantity,2
+842,clean,2
+843,content,4
+844,boiler,1
+845,accessories 1,2
+846,powerful,4
+847,clean 2,1
+848,dust case capacity,2
+849,floor usage,4
+850,cyclone technology,5
+851,green environmental attribute,2
+852,battery included / bare tool,1
+853,battery included,2
+854,tool weight,1
+855,tool length,1
+856,manufacturer color,8
+857,cod. etco,5
+858,for any question,10
+859,note,13
+860,assembly,10
+861,product features,11
+862,vacuum only. note,1
+863,charging mode,1
+864,remote control range,1
+865,glass dimension,1
+866,remote controller powered by,1
+867,cleaning speed,1
+868,adhesive time after power outage,1
+869,power indicator,1
+870,output,4
+871,operating temperature,1
+872,vacuum power,2
+873,running time,8
+874,maximum power,12
+875,assembled unit height,2
+876,smart memory,1
+877,cleaning modes,4
+878,other features,3
+879,floor types,1
+880,vacuum suctions,1
+881,application,18
+882,custom,28
+883,lifestyle,8
+884,smart invertor motor,1
+885,suction force,1
+886,user manual,1
+887,** plug type **,1
+888,shipping carrier,1
+889,return shipping will be paid by,10
+890,item must be returned within,11
+891,all returns accepted,11
+892,refund will be given as,11
+893,hose connection diameter 1 hose,1
+894,filter bag length,1
+895,sound rating,1
+896,velocity at 4in,1
+897,bag diameter,1
+898,15 hp 1100-watt 120-volt 60 hz amp,1
+899,product highlight 1,1
+900,bagless technique,26
+901,package contents,9
+902,filter method,25
+903,charge time by manufacturer,10
+904,number filter levels,3
+905,charging indicator,5
+906,lots,8
+907,type other,8
+908,lister,9
+909,battery cell type,16
+910,number of tools,3
+911,package weigh,1
+912,max air flow,3
+913,dimensionsl x w x h,1
+914,actual color,8
+915,marke,16
+916,battery composition,1
+917,easy to use,14
+918,outdoor living product type,9
+919,pool type,9
+920,cover included 2,1
+921,cover included 3,1
+922,cover included 4,1
+923,cover included 1,1
+924,cover included 5,1
+925,large water tank,2
+926,battery specification,2
+927,scent,1
+928,unspsc,7
+929,ul safety listing,11
+930,blower port,2
+931,colors,1
+932,strong vacuum suction value,17
+933,fan/motor speeds,7
+934,control type,8
+935,surface types,11
+936,decibals,6
+937,dust and even cat litter.your floor will be cleaner than ever.noted,1
+938,the roller brush does not roll on the carpet . weighs just 4.8 lbs,1
+939,number of attchements,4
+940,fit for,6
+941,easy empty dirt tank,1
+942,multi-cyclonic system,1
+943,wahsable filter,1
+944,powerful design,1
+945,extension wand,1
+946,25-foot power cord,1
+947,turbobrush tool,1
+948,ebay product id epid,1
+949,charger input,2
+950,use time,4
+951,packing size,8
+952,power / input,5
+953,shipping time,12
+954,any questions?,1
+955,simple use,1
+956,shipping from,1
+957,auto shut-off,1
+958,assembled product dimensions,3
+959,storage tank,1
+960,reusable,2
+961,car vacuum cleaner power cord,12
+962,part_number,2
+963,sizes,4
+964,usage type,6
+965,accessory type,8
+966,brand compatibility,8
+967,specifics,1
+968,vacuum suction,5
+969,ethnicity,1
+970,article modified,7
+971,product non-national,4
+972,compatibility house connected,10
+973,output steam,2
+974,battery 1 information,7
+975,battery 1 type,2
+976,conversion efficiency,1
+977,built-in cooling fan,1
+978,peak power,1
+979,output voltage,1
+980,output frequency,1
+981,no load current draw,1
+982,usb output,1
+983,customer's opinion,1
+984,weight approximate,4
+985,application/usage,3
+986,package included,5
+987,shipping weight lbs.,2
+988,electrical requirements volts/amps,2
+989,width in.,2
+990,dimensions whd,2
+991,total capacity cu. ft.,2
+992,merk,2
+993,producent,2
+994,marka,2
+995,ground sensor sensing height,4
+996,obstacle distance,4
+997,climbing angle,3
+998,ordinary vacuum suction value,7
+999,shippingservice,2
+1000,jan,2
+1001,tracking,2
+1002,dimensions - depth,1
+1003,dimensions - height,1
+1004,dimensions - width,1
+1005,diameter,17
+1006,shipping information,4
+1007,swivel steering for,2
+1008,10.5 x h,2
+1009,code,1
+1010,3.2 x h,1
+1011,steel tank capacity,2
+1012,water refilling,1
+1013,boiler capacity,6
+1014,steam temperature in the boiler,6
+1015,dimensions l x w x h x d,1
+1016,we respond to messages in,3
+1017,hurry up and order,1
+1018,publicationdate,21
+1019,batteries 2 aa batteries required.,1
+1020,maximum capacity for dust,1
+1021,maximum capacity for liquid,1
+1022,crevice tool,2
+1023,handle/lever placement,6
+1024,marca,19
+1025,caratteristiche,2
+1026,cleaning range with tools,1
+1027,unit type,4
+1028,included accessory,1
+1029,interior hose diameter,4
+1030,year,6
+1031,accessories included,2
+1032,safe packing,5
+1033,us shipping service,1
+1034,ship to,1
+1035,form,13
+1036,battery charger included,5
+1037,receptacle capacity oz.,5
+1038,auto charging,3
+1039,receptacle full indicator,5
+1040,battery recharge time hours,10
+1041,rechargeable storage base,4
+1042,series name,8
+1043,heat time,5
+1044,ships to,7
+1045,operating time,1
+1046,requires,2
+1047,nano-silver technology does,1
+1048,similar to,1
+1049,brush speed,3
+1050,for use with grainger item number,2
+1051,extra long telescopic handle,1
+1052,rolling wheels,1
+1053,simple,1
+1054,customer_service,2
+1055,cord wrap,3
+1056,measures approximately,1
+1057,dust cup,1
+1058,compatible fit for,2
+1059,efficiency,4
+1060,package,2
+1061,class,1
+1062,water capacity  oz.,7
+1063,set includes,2
+1064,accessories,3
+1065,sub type,12
+1066,connector a,12
+1067,connectors b,12
+1068,none 1,12
+1069,pack size,14
+1070,country-region of manufacture,3
+1071,the total length,2
+1072,straw tube length,3
+1073,gray tube section length,3
+1074,vehicle service type,6
+1075,exterior,12
+1076,lift type,5
+1077,accessory,1
+1078,shipping speed,4
+1079,application area,2
+1080,combination rugs for carpet and hard floor,2
+1081,electric burst,4
+1082,high,12
+1083,maximum operating time,21
+1084,bullet 2,2
+1085,bullet 4,1
+1086,bullet 5,1
+1087,bullet 3,2
+1088,bullet 1,2
+1089,dimension inches,4
+1090,dust hose diameter,4
+1091,weight pounds,4
+1092,itempackagequantity,3
+1093,servicio,5
+1094,usa shipping,8
+1095,power consumption,5
+1096,theme,8
+1097,integrated cylinder capacity,7
+1098,best sellers rank,7
+1099,customer reviews,7
+1100,other part number,3
+1101,car vacuum cleaner dimensions,2
+1102,connectivity,2
+1103,wahl,1
+1104,seller's comments,3
+1105,upc sku,2
+1106,air watts,8
+1107,water lift,5
+1108,power voltage,3
+1109,using time,1
+1110,lithium-ion battery capacity,3
+1111,voltage requirement,10
+1112,power requirement,5
+1113,charger type,5
+1114,ergonomic design,1
+1115,lightweight,4
+1116,built in crevice tool,1
+1117,signature,6
+1118,accessories inciuded,1
+1119,technology,4
+1120,usb charger,1
+1121,table,1
+1122,dust,1
+1123,anti falling,4
+1124,bagless power w,1
+1125,protection plan,19
+1126,attix,1
+1127,"light enough to carry anywhere, even up and down stairs",1
+1128,"hepa filtration 7-amp motor 11"""" cleaning path",1
+1129,weighs 9 lbs,1
+1130,100% warranty and best service,3
+1131,compact upright vacuum,1
+1132,fits,3
+1133,vacuum cleaner for kitchen,1
+1134,vacuum cleaner for car,1
+1135,vacuum cleaner for home cleaning,1
+1136,vacuum cleaner for hair,1
+1137,guarantee,3
+1138,charger cord length,1
+1139,fabric type,1
+1140,specification met,1
+1141,batteries required,6
+1142,care instructions,1
+1143,is assembly required,1
+1144,battery description,1
+1145,length of hose,16
+1146,length of power cord,14
+1147,position power,1
+1148,high capacity dust box,3
+1149,led light,3
+1150,inline dedicated design,3
+1151,adjustable depth stop and ruler,2
+1152,replaceable certified hepa filter,3
+1153,pet turbo claw tool,1
+1154,vacuum cleaner,2
+1155,powerful suction,1
+1156,upright vacuum,2
+1157,heavy duty,2
+1158,stainless steel tank capacity,1
+1159,includes 4-piece micro cleaning kit,1
+1160,herstellernummer,3
+1161,battery working time,2
+1162,battery power,3
+1163,keyword,1
+1164,product packaging,1
+1165,bowl capacity,2
+1166,dust cup capacity,16
+1167,beat frequency,1
+1168,uv lamp power,1
+1169,battery run time minutes,8
+1170,cyclonic action,8
+1171,storage base mounting type,7
+1172,collision protection,1
+1173,sweeper function,1
+1174,product material,4
+1175,cleaning cycle,2
+1176,mopping function,3
+1177,fast and easy cleaning,1
+1178,mini car vacuum with big skills,1
+1179,sealed suction in water,2
+1180,attachment dia.,9
+1181,built in led light,1
+1182,installation method,4
+1183,tax free,6
+1184,power input,1
+1185,altura del artículo,1
+1186,peso del artículo,1
+1187,tipo de artículo,2
+1188,tipo de material,2
+1189,ancho del artículo,1
+1190,longitud del artículo,1
+1191,características especiales,1
+1192,certificación de pruebas externas,1
+1193,control,1
+1194,345*345*96   charging seat,1
+1195,suction strength,1
+1196,p.o box shipping,6
+1197,part type,3
+1198,ridgid wet dry vacuum,1
+1199,warrenty,1
+1200,number of batteries included,19
+1201,well packed,5
+1202,customer service response,4
+1203,fast and free,4
+1204,suitable for 1,3
+1205,suitable for 2,3
+1206,battery - /accu type,2
+1207,area of ​​use,1
+1208,cable material,1
+1209,accessory holder,2
+1210,container material,5
+1211,maximum volume of the dust container,9
+1212,ships,2
+1213,compatible,1
+1214,birth defects or other reproductive harm. some examples of those chemicals are,8
+1215,cleaning range,6
+1216,handling time until shipment,2
+1217,delivery contents,5
+1218,mode,6
+1219,gps,2
+1220,retired target.com - web only,3
+1221,power cable,2
+1222,product informaiton,8
+1223,abpa partslink number,4
+1224,bulb type,7
+1225,mirror adjustment,6
+1226,sensors,2
+1227,4 cleaning mode,1
+1228,good for,2
+1229,ideal for,1
+1230,maintenance,1
+1231,600 pa range climbing capacity,1
+1232,specification,1
+1233,filter replacement,1
+1234,dust bucket,1
+1235,charging modes,1
+1236,pet hair care technology,1
+1237,operation,1
+1238,1.1 x h,1
+1239,package qty.,3
+1240,compatibility,2
+1241,for any problem,2
+1242,delivery time,2
+1243,combination brush for carpet and hard floor,10
+1244,cable rewind,3
+1245,type brushes / nozzles,6
+1246,parking system intake manifold,2
+1247,carpet cleaning class,3
+1248,number of filter levels,10
+1249,maximum volume of the water tank,1
+1250,material dust bag,5
+1251,matching dust bag,5
+1252,length of connection cable,5
+1253,mass,13
+1254,serial number,15
+1255,engine speed,1
+1256,charging line length,1
+1257,power battery,1
+1258,product structure,1
+1259,genre,6
+1260,time,1
+1261,​accessories for,4
+1262,cordless vacuum cleaner power,1
+1263,cordless vacuum cleaner low noise,1
+1264,cordless vacuum cleaner dimensions,1
+1265,cordless vacuum cleaner multipurpose,1
+1266,cordless vacuum cleaner future,1
+1267,tank capacity 2.0 liter,1
+1268,product dimensionsl*w*h,1
+1269,store use only,5
+1270,navigation path,8
+1271,time of endurance,1
+1272,publication year,2
+1273,international availability,4
+1274,handing time,1
+1275,delivery us,1
+1276,iteam weight,1
+1277,perfect also as,2
+1278,6 feet number of handles,1
+1279,hose lenght,1
+1280,additional features,5
+1281,air flow capacity,5
+1282,number of items,12
+1283,additonal images,2
+1284,sound,1
+1285,grading,1
+1286,recommended age range,3
+1287,1.567 x h,3
+1288,nominal voltage,1
+1289,applicable models,1
+1290,duration battery,4
+1291,isautographed,13
+1292,isadultproduct,5
+1293,ismemorabilia,6
+1294,producttypesubcategory,16
+1295,shipping to,1
+1296,items,1
+1297,noise level,13
+1298,filter features,13
+1299,funtion,1
+1300,large capacity,1
+1301,pattern movement,2
+1302,elevation sensor,2
+1303,edge cleaner included,3
+1304,color/finish family,7
+1305,cleaning path width inches,2
+1306,for electrical appliances,3
+1307,shipping exceptions,2
+1308,manufactured,2
+1309,great for,1
+1310,free,2
+1311,in the box 10,5
+1312,in the box 11,2
+1313,lithium battery capacity,1
+1314,true air,2
+1315,working suction,3
+1316,color name,4
+1317,cleaning tool type,6
+1318,external testing certification,10
+1319,item height,10
+1320,item type,19
+1321,item width,14
+1322,model name,10
+1323,item length,12
+1324,product lot quantity,5
+1325,iboost,1
+1326,bonus,1
+1327,wide upholstery tool,1
+1328,bagless technology,1
+1329,charging cord,1
+1330,dusting brush,2
+1331,ion power pack battery,1
+1332,"8"""" crevice tool",1
+1333,machine size,2
+1334,compatible model,5
+1335,inlet diameter,2
+1336,canister volume,2
+1337,release year,2
+1338,platform,3
+1339,agency compliance,1
+1340,tank type,3
+1341,range,1
+1342,load time according to manufacturer,1
+1343,dust filled,1
+1344,maximum suction performance,4
+1345,supplied,1
+1346,maximum volume of dust container,8
+1347,with/bagless,2
+1348,battery -/battery type,3
+1349,load time by manufacturer,5
+1350,charge indicator,10
+1351,hose size,2
+1352,product category,3
+1353,mode of operation,1
+1354,power supply mode,2
+1355,switch type,2
+1356,whether there is virtualwalls,1
+1357,the style of sweeper,1
+1358,appearance modeling,1
+1359,authorized brand,1
+1360,rated frequency,9
+1361,timing function,1
+1362,use environment,1
+1363,range of application,3
+1364,15.0 x h,1
+1365,contents of the package,4
+1366,dust tank,4
+1367,ebaycategoryid,2
+1368,ebaycategorysuggestion,2
+1369,dimensionsmm.,1
+1370,battery lition,1
+1371,water tank capacity,4
+1372,battery / battery type,8
+1373,charging time according to manufacturer,11
+1374,manufacturer article number,5
+1375,control on the handle,7
+1376,housing material,2
+1377,animal brush,3
+1378,accessories in the device,6
+1379,use for,4
+1380,controls,1
+1381,can be used to,2
+1382,apolication,3
+1383,product power,2
+1384,note ii,1
+1385,hose dimensions,1
+1386,crevice attachment,1
+1387,included components 2,1
+1388,brush attachment,1
+1389,extension hose,1
+1390,by,1
+1391,sheet size,1
+1392,suitable,1
+1393,wattage watts,6
+1394,current,2
+1395,fans,1
+1396,extra feature,4
+1397,type 2,2
+1398,type 3,2
+1399,type 4,2
+1400,type 1,2
+1401,suction level,3
+1402,restricted sale item code,2
+1403,charger voltage,1
+1404,2.575 x h,1
+1405,https,2
+1406,ac100v,1
+1407,country,4
+1408,fully reclining wand that telescopes,1
+1409,units per consumer unit,1
+1410,prop 65 description,1
+1411,garment steamer type,2
+1412,inv,7
+1413,"pr, hi, ak shipping",1
+1414,1 ea - 965530-01 dyson tool bag,1
+1415,with or without bag,6
+1416,insertion bundle,4
+1417,free return,3
+1418,do you have any questions?,3
+1419,voltage power,1
+1420,fast and free service,1
+1421,money back  guaranteed,1
+1422,apply,1
+1423,bag refills,1
+1424,solution tank capacity,2
+1425,recovery tank capacity,2
+1426,operatingsystem,1
+1427,legaldisclaimer,1
+1428,dropshipping,1
+1429,broomstick material,6
+1430,broom head material,6
+1431,fits brand,1
+1432,for use with mfr. model number,2
+1433,car compatibility,1
+1434,return policy details,1
+1435,bagged bagless,1
+1436,applicable battery,1
+1437,csa safety listing,4
+1438,performance,1
+1439,display,2
+1440,vacuum,9
+1441,country of origin/place of origin,4
+1442,load indicator,1
+1443,manufacturers number,8
+1444,tag,1
+1445,action ra dius,1
+1446,bag size,1
+1447,included attachments,2
+1448,languages,2
+1449,runningtime,3
+1450,operation sart,1
+1451,maximum volume of dust tank,3
+1452,floor brush material,6
+1453,ground brush power,5
+1454,type of vacuum,4
+1455,astm cfm,1
+1456,motor cfm,1
+1457,'bag/bagless',1
+1458,washable filters,2
+1459,2 power modes,1
+1460,power nozzle,1
+1461,ul listed,6
+1462,degree of vacuum,1
+1463,advantage,1
+1464,hand vacuum,1
+1465,easy storage,1
+1466,customizable,1
+1467,cleaning efficiency,3
+1468,18 ft. power cord,1
+1469,swivel steering,1
+1470,stick vacuum,2
+1471,stair vacuum,1
+1472,portable,2
+1473,24/7 remote monitoring and navigation,2
+1474,productreferenceid,1
+1475,packagetype,2
+1476,fit to,1
+1477,бренд,1
+1478,sellers code,1
+1479,bagless washable filter,1
+1480,portable lightweight,1
+1481,more cleaning area,1
+1482,dirt collection,1
+1483,more cleaning areas,1
+1484,other cleaning area,1
+1485,other cleaning areas,1
+1486,level cleaning in soil,3
+1487,class of residuals of powder,3
+1488,plug type,11
+1489,spin3pro premium brushroll for,1
+1490,xl dirt cup holds,1
+1491,16v lithium battery for longer runtime,1
+1492,easy release brushroll for,1
+1493,lightweight design with,1
+1494,capacity for powder,1
+1495,level cleaning on carpet,2
+1496,this product contains chemicals known to the state of california to cause cancer and birth defects or other reproductive harm. for more information visit https,2
+1497,innovative,1
+1498,smooth-rolling,1
+1499,weighs,1
+1500,functionality check ii,1
+1501,package condition,1
+1502,functionality check i,1
+1503,cosmetic condition,1
+1504,the perfect,2
+1505,limited time offer,2
+1506,limited quantity stock !,2
+1507,high power portable rechargeable cordles,1
+1508,free 60 day return,2
+1509,line lengh,1
+1510,camplete with convenient,1
+1511,high power 60w portable vacuum,1
+1512,brushless motor,1
+1513,suitable as a gift,2
+1514,stylish,2
+1515,remote controled,1
+1516,multiple cleaning modes,1
+1517,comfortable,2
+1518,working sound,1
+1519,durable,3
+1520,obs sensor,2
+1521,subtype,2
+1522,compact size,2
+1523,team,1
+1524,replacement,2
+1525,fast  free 2 day shiping,1
+1526,portable handheld powerful,1
+1527,type of bulb,2
+1528,dust collection,1
+1529,dirt cup,2
+1530,cable size,2
+1531,high quality,1
+1532,delivery carriers,3
+1533,returns  money back,4
+1534,authentic photos,2
+1535,original photos,1
+1536,brand new,1
+1537,powerd,2
+1538,game type,2
+1539,input voltage & frequency,3
+1540,what's in the box,1
+1541,jack plug charger. note,1
+1542,flow rate,1
+1543,bag capacitydry volume cu ft,2
+1544,buyallxpress,1
+1545,us seller,1
+1546,loading time by manufacturer,2
+1547,type of power setting,1
+1548,maximum volume of the dust bin,1
+1549,packing weight wxhxd cm,7
+1550,staubbehalter,1
+1551,fa rbe,1
+1552,filter bag volume,2
+1553,accessory in the device,1
+1554,flavor,2
+1555,sizename,1
+1556,dimensions lxwxh,1
+1557,made in the,1
+1558,2.31 x h,1
+1559,inhalation efficiency,1
+1560,type`,2
+1561,handle type,1
+1562,grade,2
+1563,maximum suction power,6
+1564,360° rotation,1
+1565,manual,3
+1566,continuous use,3
+1567,pickup material,1
+1568,multi-surface cleaning,2
+1569,vacuum operation run-time,2
+1570,average charge time,2
+1571,dimensionsdx h,2
+1572,discontinued by manufacturer,3
+1573,dc line length,1
+1574,overall length,4
+1575,material 2,1
+1576,free tax,1
+1577,fast & free shipping,1
+1578,questions response,1
+1579,returns accepted,1
+1580,item located at,1
+1581,program periods per day,1
+1582,top quality ?,1
+1583,easy to use ?,3
+1584,tools,3
+1585,"hi, pr & ak shipping",1
+1586,vacuum function,1
+1587,liters capacity,1
+1588,vacuum cleaners,1
+1589,a high performance motor provides,1
+1590,lithium technology for,1
+1591,exclusive pivoting nozzle means,1
+1592,wide mouth design,1
+1593,0.48 x h,1
+1594,single maximum usage time,1
+1595,filtration,3
+1596,speeds,1
+1597,brushes/pads,1
+1598,commercial / residential,1
+1599,connector/contact type,1
+1600,included,3
+1601,alarm type,2
+1602,alarm/detector features,1
+1603,regency use,1
+1604,docking station,2
+1605,suitable for the ground,2
+1606,clean area,2
+1607,cord,2
+1608,state tax,1
+1609,virtual wall,2
+1610,commodity type,6
+1611,when used size,1
+1612,storage time size,1
+1613,airflow,3
+1614,countryofmanufacture,1
+1615,fragrance,2
+1616,1.45 x h,2
+1617,long connection cables,2
+1618,packing weight wxhxd  cm,2
+1619,pet power brush,1
+1620,colorname,1
+1621,manufacturer`s warranty,1
+1622,water capacity,1
+1623,max suction power,2
+1624,max suction efficiency,1
+1625,80 ml /dry,1
+1626,ho he,1
+1627,contents,1
+1628,working width,1
+1629,dustfull display,1
+1630,long connection cords,3
+1631,cradle,1
+1632,case material,1
+1633,maximum volume of water container,1
+1634,226319-01,2
+1635,factory sealed,2
+1636,pet brush,2
+1637,wet-dry option,2
+1638,wall mountable,2
+1639,motorized brush included,3
+1640,made for pet hair,2
+1641,lowe's exclusive,2
+1642,headlights,3
+1643,for use on vinyl,3
+1644,for use on tile,3
+1645,for use on laminate,3
+1646,for use on hardwood floors,3
+1647,for use on carpet and rugs,3
+1648,etl safety listing,3
+1649,dust pad included,2
+1650,cord length feet,3
+1651,battery level indicator,2
+1652,behaltermaterial,2
+1653,gehausematerial,3
+1654,maximum volume of the water container,1
+1655,water level display,1
+1656,wide wet nozzle,1
+1657,big sale,3
+1658,postage,4
+1659,in our store,2
+1660,any equations ?,2
+1661,input,3
+1662,charing time,1
+1663,hours,1
+1664,hanger features,1
+1665,strings,1
+1666,ebay,2
+1667,not included,2
+1668,no charger,2
+1669,wrapped in bubble,3
+1670,closure,1
+1671,style subtype,1
+1672,bag or bagless 2,1
+1673,our best selling premium vacuum cleaner!,1
+1674,side brushes,1
+1675,dc adapter,1
+1676,durability,2
+1677,material quality,1
+1678,amperage capacity,5
+1679,fit,1
+1680,fully charged,1
+1681,window cleaning robot adhesive type,2
+1682,robot window cleaner cleaning pattern,2
+1683,robot window washer safety rope strength,2
+1684,00,1
+1685,size and weight,1
+1686,units size,1
+1687,unit average power,1
+1688,general condition,1
+1689,shipping dimensions,1
+1690,pet features,1
+1691,dirt cup capacity,2
+1692,dustpan material,5
+1693,dual filtration system,1
+1694,li-ion battery capacity,1
+1695,vacuuming power,3
+1696,us tax,1
+1697,extension wands,1
+1698,depth of the product,1
+1699,product cord length,1
+1700,width of the product,1
+1701,product hose diameter,1
+1702,product amperage,1
+1703,product hose length,1
+1704,product filter type,1
+1705,product voltage,1
+1706,product peak horsepower,1
+1707,product capacity,1
+1708,product air volume,1
+1709,height of the product,1
+1710,feedback,1
+1711,country of origin / place of origin,5
+1712,shelves,1
+1713,drawers,1
+1714,hdd,2
+1715,ram,2
+1716,cordless handheld vacuum cleaner for car,1
+1717,rechargeable and cordless design,1
+1718,2200mah battery capacity,1
+1719,2-3 days shipping,3
+1720,items dimensions,4
+1721,package includes #2,1
+1722,package includes,5
+1723,rotating nozzle,1
+1724,washable bowl + filter,1
+1725,wall mount,1
+1726,pull-out crevice tool,1
+1727,lithium technology,1
+1728,flip-up brush,1
+1729,reconditioned,2
+1730,collection,2
+1731,manufacturer finish,1
+1732,part #,1
+1733,fishing style,1
+1734,fish species,1
+1735,fishing type,1
+1736,hook size,1
+1737,3 vacuums in 1,3
+1738,vacuum cleaning path,1
+1739,packaging,4
+1740,removable washable filter,1
+1741,bagless cyclonic technology,1
+1742,easy empty dirt cup,1
+1743,high reach extension wand,1
+1744,lightweight with powerful suction,1
+1745,stock number,1
+1746,used for,1
+1747,ships_from,1
+1748,returnes,1
+1749,power maximum,1
+1750,attention california residents,3
+1751,toys type,1
+1752,cordless/corded,1
+1753,loc,1
+1754,contract,3
+1755,nombre de la marca,1
+1756,prestaciones,1
+1757,dc 12v car cigarette lighter plug,1
+1758,switch,1
+1759,sealed pressure,1
+1760,primary hose length,1
+1761,color main,3
+1762,1.73 x h,1
+1763,jet of,3
+1764,refilling,5
+1765,power / wattage,4
+1766,low speed,1
+1767,high speed,1
+1768,cleans all floor types,1
+1769,compatible with amazon alexa and google assistant,1
+1770,lithium-ion battery,1
+1771,won’t fall down stairs,1
+1772,3-stage cleaning system,1
+1773,& suctions dirt,1
+1774,sweeps wall edges and corners,1
+1775,automatically returns to charging cradle,1
+1776,programmable,1
+1777,program,1
+1778,navigates under furniture,1
+1779,navigates around clutter,1
+1780,,1
+1781,charger,2
+1782,equipment type,1
+1783,brush & pad type,1
+1784,battery charging time,1
+1785,battery operating time,1
+1786,protection class,1
+1787,voltage supply,1
+1788,surrounding,1
+1789,working mode,2
+1790,floor type,2
+1791,free tax ?,2
+1792,free and fast shipping ?,2
+1793,ships from usa ?,2
+1794,quality ?,2
+1795,waffle,1
+1796,search use only,1
+1797,proprietor's use only,1
+1798,1.53 x h,1
+1799,usa voltage,1
+1800,batteries 1 lithium ion batteries required. included,1
+1801,max. air suction,2
+1802,suction efficiency,2
+1803,dust collecting capacity,2
+1804,compact,2
+1805,lithium hand vac,1
+1806,assembled_product_weight,1
+1807,refurbished note 2,2
+1808,costumer service,1
+1809,max noise level,1
+1810,products,1
+1811,estimated delivery,1
+1812,condition,1
+1813,pump capacity,1
+1814,detergent tank capacity,1
+1815,pump pression,1
+1816,base,2
+1817,depression,1
+1818,power pump,1
+1819,vacuum speed,1
+1820,1.22 x h,1
+1821,3-in-1 vacuum cleaner functions,1
+1822,suitable for cleaning,1
+1823,input power,1
+1824,water suction capacity,1
+1825,isbn10,1
+1826,isbn13,1
+1827,packing size wxhxd cm,5
+1828,maximum volume dust tank,1
+1829,hose type,1
+1830,action radius,2
+1831,product class,1
+1832,product type extra,1
+1833,parent category,1
+1834,dia. in.,1
+1835,height in.,1
+1836,pest/weed type,1
+1837,bed bug treaytment,1
+1838,bed bug control,1
+1839,washable filter,2
+1840,adjustable suction,1
+1841,carpet height adjustments,1
+1842,compatible floor type,2
+1843,pet,1
+1844,odor eliminating,1
+1845,multi surface,1
+1846,hypoallergenic,1
+1847,edge cleaning,1
+1848,steam cleaning,1
+1849,speed,5
+1850,tamaño  mm,2
+1851,tipo de almacenamiento del polvo,2
+1852,tipo de filtro,2
+1853,turbo cepillo,2
+1854,certificación,2
+1855,voltaje v,2
+1856,control remoto,2
+1857,duración de la batería,2
+1858,detection system,1
+1859,boquilla de aspiración especial,2
+1860,función,2
+1861,instalación,2
+1862,longitud del cable m,2
+1863,output voltage/current of charger,2
+1864,polvo capacidad de la caja l,2
+1865,potencia w,2
+1866,reserva de tiempo,2
+1867,con bolsa o sin bolsa,2
+1868,ruta de limpieza,2
+1869,scent diffusers,1
+1870,safeguarding,1
+1871,cleaning surface,1
+1872,d.o.l.,4
+1873,interloper part #,1
+1874,onoff brushroll,1
+1875,featured refinements,1
+1876,is customised,1
+1877,pivoting head,1
+1878,receptacle capacity gallons,1
+1879,telescoping wand length inches,1
+1880,head to handle length inches,1
+1881,telescoping wand,1
+1882,self-propelled,1
+1883,retractable cord,1
+1884,bare floor nozzle included,1
+1885,hose length feet,1
+1886,commercial/residential,1
+1887,number of wands,1
+1888,brand/model compatibility,1
+1889,accessories and attachments,2
+1890,steam pressure,2
+1891,classification energy,1
+1892,longlife vacume cleaner,1
+1893,operating system edition,1
+1894,14.4v dust storage type,1
+1895,manufacturer item number,1
+1896,vacuum system,1
+1897,suction tube material,1
+1898,radius of action,1
+1899,number of radars,1
+1900,vacuum control,1
+1901,connected value,2
+1902,operating voltage,2
+1903,easy clean,1
+1904,wide drying nozzle,1
+1905,separation system,1
+1906,corded,1
+1907,cord rewind,1
+1908,peak air watts,1
+1909,made in,1
+1910,boiler power,1
+1911,team temperature in the boiler,1
+1912,fetures,1
+1913,hand held,1
+1914,work time,1
+1915,cordless corded,2
+1916,hurry up,1
+1917,for use on,1
+1918,for use,1
+1919,ser no.,1
+1920,fax,1
+1921,watt,1
+1922,which includes more that 850 chemicals.warning,1
+1923,hersteller,2
+1924,compatible models,1
+1925,is powered,1
+1926,comes with on-board tools,1
+1927,1.06 x h,1
+1928,accessory mount,1
+1929,handle control,1
+1930,connected load,1
+1931,full money back guarantee,4
+1932,package_quantity,1
+1933,dustbin capacity,2
+1934,comfort handle grip,1
+1935,dust box capacityml,1
+1936,instructions,3
+1937,connection,1
+1938,water tank capacity l,1
+1939,manufacture country,1
+1940,marque,1
+1941,product use,1
+1942,dust container capacity,1
+1943,shippin,1
+1944,listed by,1
+1945,wet - /dry suction,1
+1946,delivery content,1
+1947,led display,1
+1948,esp eligible,2
+1949,matrtial,1
+1950,system of measure,1
+1951,aspiradora para auto,1
+1952,aspiradora para carro,1
+1953,nwpkbx17,1
+1954,vacuum weight,2
+1955,concerns,1
+1956,ingredient,1
+1957,skin type,1
+1958,formulation,1
+1959,energy,1
+1960,skill level,1
+1961,prop65 warning required,1
+1962,conditon,1
+1963,uses battery,1
+1964,prop65 warning,1
+1965,prop65 chemical,1
+1966,clean diameter,1
+1967,parts,2
+1968,pile height adjustments,1
+1969,attachment type 2,1
+1970,general warranty,1
+1971,bag item number,1
+1972,filter type/number of filters,1
+1973,controls on handles,1
+1974,maximum volume of the vacuum box,1
+1975,boundary markers,1
+1976,drop sensor,1
+1977,way more than enough,2
+1978,item model numbe,1
+1979,boostiq technology,1
+1980,power style,1
+1981,yes. machine has been upgraded to platinum edition which consists of,1
+1982,gross weight,1
+1983,line  length,1
+1984,with attachments,1
+1985,lightweight design,1
+1986,wet/dry vac,1
+1987,24-hour charging time,1
+1988,cordless power,1
+1989,economical,1
+1990,6 volts,1
+1991,bagless design,1
+1992,occasion,1
+1993,tracking number,1
+1994,is cordless,1
+1995,contained battery type,1
+1996,manufacturermaximumage,1
+1997,number of radians,1
+1998,lighting,1
+1999,control on handle,1
+2000,any equations?,1
+2001,dog litter item type,1
+2002,cordtype,2
+2003,part,1
+2004,shipping_speed,1
+2005,mfg #,1
+2006,unique design,1
+2007,proposition 65 warning for california consumers  warning,1
+2008,power 2 amps,1
+2009,cord length 18',1
+2010,product dimensions m6 x 10 x 44 inches,1
+2011,item4,1
+2012,item10,1
+2013,item1,1
+2014,item7,1
+2015,item5,1
+2016,item8,1
+2017,item9,1
+2018,item6,1
+2019,amps ac,1
+2020,replacement filter,1
+2021,dog cat pet hair,1
+2022,total length,1
+2023,chance to win a free mystery gift,1
+2024,custumer service,1
+2025,calidad,1
+2026,envio,1
+2027,brush/pad size,1
+2028,shipment,1
+2029,detachable hand vacuum,1
+2030,taxes,2
+2031,only fits,1
+2032,extension tube material,1
+2033,suitbale for,1
+2034,effect,1
+2035,amount,1
+2036,meant for,1
+2037,max power,1
+2038,longlife vacuume cleaner,1
+2039,robot size,1
+2040,filter dimension,1
+2041,country-of-origin,2
+2042,id,2
+2043,number of remotes included,1
+2044,proscenic model,1
+2045,water capacity  oz,1
+2046,1.46 x h,1
+2047,modelnumber,2
+2048,black & decker,1
+2049,pool cleaning tool type,2
+2050,bundling options,2
+2051,storage,1
+2052,steam time,1
+2053,<b>title,1
+2054,</b> various<br><b>arranger,1
+2055,instrumentation,1
+2056,editionpublisher,1
+2057,difficulty,1
+2058,composer,1
+2059,cyclonic system for,1
+2060,container volume,1
+2061,product family,1
+2062,bulb info,1
+2063,ul safety certification,1
+2064,bulbs included,1
+2065,damp location rated,1
+2066,wet location rated,1
+2067,number of lights,1
+2068,indoor use,1
+2069,remote control included,1
+2070,power suction,1
+2071,charge type,1
+2072,automatic window cleaner auto-finish,1
+2073,glass cleaner tool ups,1
+2074,robotic window cleaner machine size,1
+2075,remote controller,1
+2076,automatic glass cleaner power comsuption,1
+2077,with side brushes,1
+2078,remote controlled,1
+2079,cleaning system,1
+2080,tempered glass on top,1
+2081,3 filter system,1
+2082,auto charge,1
+2083,decibels,1
+2084,dust collector capacity,1
+2085,long life,1
+2086,360 degree wheels,1
+2087,auto,2
+2088,advanced hepa filter,1
+2089,suitable floors,1
+2090,moter,1
+2091,accessories 2,1
+2092,cleaning,2
+2093,original item,1
+2094,seller response time,1
+2095,high quality product,1
+2096,informations sur le produit,1
+2097,nowhere to hide built-in ultra-bright leds,1
+2098,item number,1
+2099,handled stick vacuum cleaner,1
+2100,camping stove,1
+2101,portable camping stove material,1
+2102,country of origin ebay,1
+2103,manufacturer id,1
+2104,amp hour,1
+2105,air speed mph,1
+2106,battery system,1
+2107,commercial  residential,1
+2108,connectorcontact type,1
+2109,alarmdetector features,1
+2110,compatibility fit,1
+2111,schedule,2
+2112,3-stage cleaning,1
+2113,floor cleaning design,1
+2114,self propelled,1
+2115,soft hose length,1
+2116,wet /dry suction,2
+2117,item specifics,1
+2118,item durability,1
+2119,inventory location,1
+2120,inventory item,1
+2121,superseded part number,1
+2122,wet / trockensaugfunktion,1
+2123,money back gurantee,2
+2124,seller support,2
+2125,taken out of a kit,1
+2126,indoor outdoor,1
+2127,color finish,1
+2128,wi-fi,1
+2129,capable of mopping,1
+2130,number of sweep arms,1
+2131,db,1
+2132,air wattage,1
+2133,dust chamber capacity,1
+2134,temperature,1
+2135,beating frequency,1
+2136,brush and nozzle attachments,1
+2137,energy efficiency rating,1
+2138,small detail clean ups,1
+2139,certifications,2
+2140,multi-floor cleaning,1
+2141,type2,1
+2142,handheld cordless car vacuum cleaner,1
+2143,dry and wet optional,1
+2144,movie/tv title,1
+2145,operation mode,1
+2146,converts to blower for easy leaf removal,1
+2147,maximum noise,1
+2148,brush width,1
+2149,driving speed,1
+2150,features 1,1
+2151,surface finish,1
+2152,features lll,1
+2153,one-touch power button,1
+2154,features ll,1
+2155,battery amp hour,1
+2156,this product for,1
+2157,shipping type,1
+2158,battery require,1
+2159,vacuum part type,1
+2160,turbo,1
+2161,we will solve any problem for you,1
+2162,feature -,1
+2163,us free shipping,1
+2164,the product,1
+2165,led touch screen,1
+2166,uv lamp,1
+2167,packing weight  wxhxd cm,1
+2168,cable winder,1
+2169,1.33 x h,1
+2170,3-in-1,1
+2171,wire reinforced,1
+2172,multi-surface,1
+2173,no load speed,1
+2174,12v connector,1
+2175,long connection cable,1
+2176,l x w x h,1
+2177,voltage.,1
+2178,refurbished note 3,1
+2179,refurbished note 1,1
+2180,control number,1
+2181,working current,1
+2182,power cable lenth,1
+2183,cleaning method,1
+2184,capacity cubic feet,1
+2185,brush motor speed,1
+2186,1.66 x h,1
+2187,pack of,1
+2188,mat color,1
+2189,housepower,1
+2190,package dimentions,2
+2191,qa,2
+2192,tank,1
+2193,accessories include,1
+2194,bagged included,1
+2195,dated,1
+2196,power rating,2
+2197,pet hair cleaning,1
+2198,dc-12v power,1
+2199,>=3200pa power cord length,1
+2200,≤65db weight,1
+2201,1 touch go,1
+2202,free two-day shipping,1
+2203,free return 30 day,1
+2204,included in the box 4,1
+2205,included in the box 3,1
+2206,included in the box 2,1
+2207,included in the box 1,1
+2208,dust bin,1
+2209,cleaner brush,1
+2210,light source,1
+2211,shark rocket vacuum,1
+2212,hard floor hero,1
+2213,accessory bag,1
+2214,"5"""" crevice tool",1
+2215,car detail kit,1
+2216,upholstery and drapes,1
+2217,upholstery tool,1
+2218,deep cleaning suction power,1
+2219,ultra light design,1
+2220,is autographed,1
+2221,release date,1
+2222,thickness,1
+2223,large dust cup capacity,1
+2224,compatible with 1,1
+2225,vacuum motor filter,1
+2226,steam's pressure,1
+2227,pawer supply,1
+2228,"hi, pr, ak shipping",1
+2229,warranty information,1
+2230,duration,1
+2231,use area,1
+2232,other info,1
+2233,more info,1
+2234,length in,1
+2235,capacity gal,1
+2236,1.35 x h,1
+2237,number of castors,2
+2238,material suction tube,1
+2239,date of manufacture,1
+2240,button,1
+2241,número de modelo,1
+2242,using area,1
+2243,autonomy,1
+2244,includes bonus accessories for a whole range of cleaning needs,1
+2245,hygienic bin emptying,1
+2246,head,1
+2247,turbine,1
+2248,working time after fully charging,1
+2249,1. shell material,1
+2250,2. power consumption,1
+2251,6. cable length,1
+2252,7. color,1
+2253,5. size,1
+2254,3. working voltage,1
+2255,cleaning radius,1
+2256,working radius,1
+2257,model line,1
+2258,product brand,1
+2259,modus,1
+2260,maximum usage time,1
+2261,h ohe,1
+2262,animal burst,1
+2263,maximum current,1
+2264,adapter input voltage,1
+2265,n. 2 engines,1
+2266,1.47 x h,1
+2267,fil washable,1
+2268,proposition 65 reasons,1
