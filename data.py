@@ -70,12 +70,12 @@ class Data():
                     if j == len(comma_separated) - 1:
                         cur_key = self.strip_string(element_attr)
                     else:
-                        attr_data[cur_key].append(element_attr.lower())
+                        attr_data[cur_key].append(self.strip_string(element_attr))
             # Else, all element in the comma separated 
             #   list is the attribute of the last key
             else:
                 for j, element_attr in enumerate(comma_separated):
-                    attr_data[cur_key].append(element_attr.lower())
+                    attr_data[cur_key].append(self.strip_string(element_attr))
         return attr_data
 
     def get_image(self, url) -> PIL.Image:

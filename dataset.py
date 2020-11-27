@@ -3,6 +3,7 @@ from typing import List
 import collections
 import random
 import numpy as np
+import pickle
 
 class Dataset:
     """
@@ -48,6 +49,17 @@ class Dataset:
                         break
         except:
             print(f"cannot add data: {line}; row length: {len(row)}") 
+
+    @staticmethod
+    def load_dataset_from_binary(path):
+        with open(path, 'rb') as f:
+            dataset = pickle.load(f)
+        return dataset
+
+    @staticmethod
+    def save_dataset_to_binary(d, path):
+        with open(path, 'wb') as f:
+            pickle.dump(d, f)
 
 ##########################     Test     ######################################
 if __name__ == '__main__':

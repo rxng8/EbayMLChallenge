@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from dataset import Dataset
-from preprocessor import Preprocessor
+# from preprocessor import Preprocessor
 
 if __name__ == '__main__':
     DTA_FOLDER_PATH = Path("dataset")

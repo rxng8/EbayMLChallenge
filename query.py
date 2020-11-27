@@ -34,7 +34,7 @@ class DatasetQuery:
 
     def get_n_unique_category(self):
         counter = collections.Counter()
-        for k, v in self.d.dataset.items():
+        for _, v in self.d.dataset.items():
         # for i, id in enumerate(self.list_ids):
             # v = self.dataset[id]
             # if "mlchallenge_set_2021.tsv" in v.category:
@@ -42,7 +42,16 @@ class DatasetQuery:
             counter[v.category] += 1
         return counter
 
-    def get_all_unique_key_attributes(self, category: str=None) -> collections.Counter:
+    def get_all_unique_key_attributes(self, category: int=None) -> collections.Counter:
+        """[summary]
+
+        Args:
+            category (int, optional): [description]. Defaults to None.
+
+        Returns:
+            collections.Counter: A collection of unique key and their 
+                appearance in the dataset.
+        """
         cnt = collections.Counter()
         # Set d = list of every listing id
         d = None
@@ -60,6 +69,29 @@ class DatasetQuery:
                 cnt[k] += 1
         
         return cnt
+
+    def get_all_unique_key_value_attrs(self, category: int=None):
+        cnt = collections.defaultdict(collections.Counter)
+        # Set d = list of every listing id
+        d = None
+        if category == None:
+            d = self.d.list_ids
+        elif category <= 0 or category > 5:
+            print("Wrong category number!")
+            return
+        else:
+            d = self.d.category_map[str(category)]
+        
+        for id in d:
+            datum = self.d.dataset[id]
+            for k, list_attrs in datum.attributes.items():
+                for attr in list_attrs:
+                    cnt[k][attr] += 1
+        return cnt
+
+    def get_most_frequent_keys(self, category: int=None, head: int=10) -> List[str]:
+        counter = self.get_all_unique_key_attributes(category)
+        return counter.most_common(head)
 
     def find_all(self, attrs: Dict, category: int=None):
         pass

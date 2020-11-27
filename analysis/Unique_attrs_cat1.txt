@@ -1,4 +1,19 @@
+
 brand
+material
+width
+us size
+type
+type 2
+pattern
+upc
+modified item
+euro size
+features
+style number
+product line
+shade
+modelbrand
 country/region of manufacture
 inseam
 style

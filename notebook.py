@@ -12,8 +12,10 @@ import sys
 # Include the current directory in notebook path
 sys.path.insert(0, './')
 
-from preprocessor import Preprocessor
+from parser import Parser
 from query import DatasetQuery
+from dataset import Dataset
+from preprocessor import Preprocessor
 
 # CONFIGS and CONSTANTS
 DTA_FOLDER_PATH = Path("dataset")
@@ -21,6 +23,9 @@ TRAIN_FILE_NAME = Path("mlchallenge_set_2021.tsv")
 TRAIN_FILE_PATH = DTA_FOLDER_PATH / TRAIN_FILE_NAME
 VALID_FILE_NAME = Path("mlchallenge_set_validation.tsv")
 VALID_FILE_PATH = DTA_FOLDER_PATH / VALID_FILE_NAME
+
+DATASET_BINARY_FILE = Path("dataset.pkl")
+DATASET_BINARY_PATH = DTA_FOLDER_PATH / DATASET_BINARY_FILE
 
 ### CODE BLOCK:
 # Read file
@@ -51,7 +56,7 @@ def test_read_line(s):
 
 # get_dataset_query
 def get_dataset_query():
-    d = get_train_dataset()
+    d = get_dataset()
     return DatasetQuery(d)
     
 # Print random data
@@ -91,8 +96,8 @@ def test_parse_attributes():
     print(str(attr_data))
 
 from dataset import Dataset
-def get_train_dataset() -> Dataset:
-    p = Preprocessor(TRAIN_FILE_PATH)
+def get_dataset() -> Dataset:
+    p = Parser(TRAIN_FILE_PATH)
     dataset = p.parse_data_file()
     return dataset
 
@@ -153,8 +158,7 @@ def matplot_plot(dataset: Dataset):
         plt.show()
 
 
-def write_all_data():
-    q = get_dataset_query()
+def write_all_data(q: DatasetQuery):
 
     # Write data analysis every unique attrs
     p = "./analysis/"
@@ -171,14 +175,45 @@ def write_all_data():
         # DatasetQuery.export_txt(dd, name)
         DatasetQuery.export_csv(dd.items(), name)
 
-# %%
+def write_all_unique_key_value_cnt(q: DatasetQuery):
+    analysis_path = "./analysis/"
+    #  Export csv of every value
+    for i in range (1, 6):
+        cnt = q.get_all_unique_key_value_attrs(i)
+        # Convert from cnt to 2d list
+        # cnt: Dict[Counter] 
+        #   or Dict[Dict[int]]: attrs_key, attr_value(key), count
+        rows = []
+        for key, attr_obs in cnt.items():
+            for attr, count in attr_obs.items():
+                rows.append([key, attr, count])
+        name = analysis_path + "unique_attr_key_val_cnt" + str(i) + ".csv"
+        DatasetQuery.export_csv(rows, name)
 
 ###### MAIN ########
+# d = get_dataset()
+# q = get_dataset_query()
+# print_random_data(q, 2)
+# d.save_dataset_to_binary("./dataset/dataset.pkl")
+# d = Dataset()
+# s = d.load_dataset_from_binary("./dataset/dataset.pkl")
 
-q = get_dataset_query()
+# %%
+d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
+q = DatasetQuery(d)
+
+# print_random_data(q, 2)
+
+# %%
+pre = Preprocessor(d)
+w = pre.get_key_weights(1)
 
 # %%
 
-print_random_data(q, 2)
+odic = sorted(w.items(), key=lambda kv:(kv[1], kv[0]), reverse=True)
 
 # %%
+
+value_iter = iter(odic)
+for i in range(200):
+    print(next(value_iter))
