@@ -43,10 +43,10 @@ class Dataset:
                 self.category_map[row[0]].append(id)
                 
                 # debug
-                for k in self.dataset[id].attributes.keys():
-                    if "(" in k or ")" in k:
-                        print(self.dataset[id])
-                        break
+                # for k in self.dataset[id].attributes.keys():
+                #     if "(" in k or ")" in k:
+                #         print(self.dataset[id])
+                #         break
         except:
             print(f"cannot add data: {line}; row length: {len(row)}") 
 
@@ -62,26 +62,26 @@ class Dataset:
             pickle.dump(d, f)
 
 ##########################     Test     ######################################
-if __name__ == '__main__':
-    from pathlib import Path
-    from preprocessor import Preprocessor
-    DTA_FOLDER_PATH = Path("dataset")
-    TRAIN_FILE_NAME = Path("mlchallenge_set_2021.tsv")
-    TRAIN_FILE_PATH = DTA_FOLDER_PATH / TRAIN_FILE_NAME
-    VALID_FILE_NAME = Path("mlchallenge_set_validation.tsv")
-    VALID_FILE_PATH = DTA_FOLDER_PATH / VALID_FILE_NAME
+# if __name__ == '__main__':
+#     from pathlib import Path
+#     from preprocessor import Preprocessor
+#     DTA_FOLDER_PATH = Path("dataset")
+#     TRAIN_FILE_NAME = Path("mlchallenge_set_2021.tsv")
+#     TRAIN_FILE_PATH = DTA_FOLDER_PATH / TRAIN_FILE_NAME
+#     VALID_FILE_NAME = Path("mlchallenge_set_validation.tsv")
+#     VALID_FILE_PATH = DTA_FOLDER_PATH / VALID_FILE_NAME
 
-    d = Dataset()
-    s = "4	https://i.ebayimg.com/00/s/ODAwWDExOTk=/z/fn4AAOSwh8hcq0Oj/$_57.JPG?set_id=8800005007	https://i.ebayimg.com/00/s/ODAwWDExOTk=/z/fn4AAOSwh8hcq0Oj/$_57.JPG?set_id=8800005007	(Color:White,Bed Size:Twin,Thread Count:1800 Series,Pattern:Solid,Type:Fitted Sheets,Material:100% Polyester,Brand:Real Cotton Collection)	940872"
-    d.add_data(s)
-    for k, v in d.dataset.items():
-        print(f"Key-value: {k}: {str(v)}")
+#     d = Dataset()
+#     s = "4	https://i.ebayimg.com/00/s/ODAwWDExOTk=/z/fn4AAOSwh8hcq0Oj/$_57.JPG?set_id=8800005007	https://i.ebayimg.com/00/s/ODAwWDExOTk=/z/fn4AAOSwh8hcq0Oj/$_57.JPG?set_id=8800005007	(Color:White,Bed Size:Twin,Thread Count:1800 Series,Pattern:Solid,Type:Fitted Sheets,Material:100% Polyester,Brand:Real Cotton Collection)	940872"
+#     d.add_data(s)
+#     for k, v in d.dataset.items():
+#         print(f"Key-value: {k}: {str(v)}")
 
-    ### Test printing the data
-    p = Preprocessor()
-    p = Preprocessor(TRAIN_FILE_PATH)
-    dataset = p.parse_data_file(head=100)
-    print("Length dataset, expected 100", len(dataset.dataset))
-    print("10 random data:")
-    for i in range (10):
-        dataset.print_random_data()
+#     ### Test printing the data
+#     p = Preprocessor()
+#     p = Preprocessor(TRAIN_FILE_PATH)
+#     dataset = p.parse_data_file(head=100)
+#     print("Length dataset, expected 100", len(dataset.dataset))
+#     print("10 random data:")
+#     for i in range (10):
+#         dataset.print_random_data()

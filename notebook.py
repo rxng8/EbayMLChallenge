@@ -16,6 +16,7 @@ from parser import Parser
 from query import DatasetQuery
 from dataset import Dataset
 from preprocessor import Preprocessor
+from data import Data
 
 # CONFIGS and CONSTANTS
 DTA_FOLDER_PATH = Path("dataset")
@@ -157,6 +158,19 @@ def matplot_plot(dataset: Dataset):
         # fig.tight_layout()
         plt.show()
 
+def get_attr_str(dta: Data):
+    dta.attributes
+    t = [k + " " + (" ".join(v)) for k, v in dta.attributes.items()]
+    t = " ".join(t)
+    return t
+
+def print_first_frequent_keys(d, category: int, head: int=15):
+    pre = Preprocessor(d)
+    w = pre.get_key_weights(category)
+    odic = sorted(w.items(), key=lambda kv:(kv[1], kv[0]), reverse=True)
+    value_iter = iter(odic)
+    for _ in range(head):
+        print(next(value_iter))
 
 def write_all_data(q: DatasetQuery):
 
@@ -189,14 +203,10 @@ def write_all_unique_key_value_cnt(q: DatasetQuery):
                 rows.append([key, attr, count])
         name = analysis_path + "unique_attr_key_val_cnt" + str(i) + ".csv"
         DatasetQuery.export_csv(rows, name)
-
+# %%
 ###### MAIN ########
 # d = get_dataset()
-# q = get_dataset_query()
-# print_random_data(q, 2)
-# d.save_dataset_to_binary("./dataset/dataset.pkl")
-# d = Dataset()
-# s = d.load_dataset_from_binary("./dataset/dataset.pkl")
+# Dataset.save_dataset_to_binary(d, DATASET_BINARY_PATH)
 
 # %%
 d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
@@ -205,15 +215,190 @@ q = DatasetQuery(d)
 # print_random_data(q, 2)
 
 # %%
-pre = Preprocessor(d)
-w = pre.get_key_weights(1)
+
+dta = q.get_random_data(1)
+# %%
+
+print(dta.attributes_str)
+# %%
+
+from gensim.models import Word2Vec
+
+sentences = []
+
+batch = 100
+for _ in range(batch):
+    sentences.append(q.get_random_data(1).attributes_str.split(" "))
+model = Word2Vec(sentences, min_count=1)
 
 # %%
 
-odic = sorted(w.items(), key=lambda kv:(kv[1], kv[0]), reverse=True)
+
+def sent_vectorizer(sent: str, model: Word2Vec) -> np.ndarray:
+    """Take the mean of every word vector in the sentence to produce a sentence vector.
+
+    Args:
+        sent ([type]): [description]
+        model ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
+
+    sent_vec =[]
+    numw = 0
+    for w in sent:
+        try:
+            if numw == 0:
+                sent_vec = model[w]
+            else:
+                sent_vec = np.add(sent_vec, model[w])
+            numw+=1
+        except:
+            pass
+     
+    return np.asarray(sent_vec) / numw
+
+
 
 # %%
 
-value_iter = iter(odic)
-for i in range(200):
-    print(next(value_iter))
+# Clustering in sentence level
+X=[]
+for sentence in sentences:
+    X.append(sent_vectorizer(sentence, model))  
+
+
+# %%
+from nltk.cluster import KMeansClusterer
+import nltk
+import numpy as np 
+  
+from sklearn import cluster
+from sklearn import metrics
+NUM_CLUSTERS=30
+kclusterer = KMeansClusterer(NUM_CLUSTERS, distance=nltk.cluster.util.cosine_distance, repeats=25)
+assigned_clusters = kclusterer.cluster(X, assign_clusters=True)
+print (assigned_clusters)
+  
+  
+  
+for index, sentence in enumerate(sentences):    
+    print (str(assigned_clusters[index]) + ":" + str(" ".join(sentence)))
+ 
+     
+     
+     
+kmeans = cluster.KMeans(n_clusters=NUM_CLUSTERS)
+kmeans.fit(X)
+  
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+  
+print ("Cluster id labels for inputted data")
+print (labels)
+print ("Centroids data")
+print (centroids)
+  
+print ("Score (Opposite of the value of X on the K-means objective which is Sum of distances of samples to their closest cluster center):")
+print (kmeans.score(X))
+  
+silhouette_score = metrics.silhouette_score(X, labels, metric='euclidean')
+  
+print ("Silhouette_score: ")
+print (silhouette_score)
+ 
+ 
+import matplotlib.pyplot as plt
+ 
+from sklearn.manifold import TSNE
+ 
+model = TSNE(n_components=2, random_state=0)
+np.set_printoptions(suppress=True)
+ 
+Y=model.fit_transform(X)
+ 
+ 
+plt.scatter(Y[:, 0], Y[:, 1], c=assigned_clusters, s=290,alpha=.5)
+ 
+ 
+for j in range(len(sentences)):    
+   plt.annotate(assigned_clusters[j],xy=(Y[j][0], Y[j][1]),xytext=(0,0),textcoords='offset points')
+   print ("%s %s" % (assigned_clusters[j],  sentences[j]))
+ 
+ 
+plt.show()
+
+# %%
+
+# CLustering in word level
+X = model[model.wv.vocab]
+from nltk.cluster import KMeansClusterer
+import nltk
+NUM_CLUSTERS=3
+kclusterer = KMeansClusterer(NUM_CLUSTERS, distance=nltk.cluster.util.cosine_distance, repeats=25)
+assigned_clusters = kclusterer.cluster(X, assign_clusters=True)
+print (assigned_clusters)
+# output: [0, 2, 1, 2, 2, 1, 2, 2, 0, 1, 0, 1, 2, 1, 2]
+# %%
+
+
+print (model.similarity('this', 'is'))
+print (model.similarity('post', 'book'))
+#output -0.0198180344218
+#output -0.079446731287
+print (model.most_similar(positive=['machine'], negative=[], topn=2))
+#output: [('new', 0.24608060717582703), ('is', 0.06899910420179367)]
+print (model['the'])
+#output [-0.00217354 -0.00237131  0.00296396 ...,  0.00138597  0.00291924  0.00409528]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# %%
+import spacy
+model = spacy.load('en_core_web_md')
+sentence = dta.attributes_str
+doc = model(sentence)
+
+# %%
+
+for token in doc:
+    print(token.text)
+    print(token.vector_norm)
+
+# %%
+
+
+
+
+# %%
+
+print(doc[1])
+doc[1].vector
+
+

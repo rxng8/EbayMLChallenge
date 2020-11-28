@@ -13,6 +13,12 @@ class DatasetQuery:
     def __init__(self, dataset: Dataset):
         self.d = dataset
 
+        '''
+        total['1'] = len(caetegory 1), ...etc
+        '''
+        self.total = {k: len(v) for k, v in dataset.category_map.items()}
+        self.total['all'] = sum(self.total.values())
+
     def get_random_data(self, category: int=None) -> Data:
         if category == None:
             r = random.randint(0, len(self.d.list_ids) - 1)
@@ -67,7 +73,6 @@ class DatasetQuery:
             datum = self.d.dataset[id]
             for k in datum.attributes.keys():
                 cnt[k] += 1
-        
         return cnt
 
     def get_all_unique_key_value_attrs(self, category: int=None):
@@ -92,6 +97,12 @@ class DatasetQuery:
     def get_most_frequent_keys(self, category: int=None, head: int=10) -> List[str]:
         counter = self.get_all_unique_key_attributes(category)
         return counter.most_common(head)
+
+    def get_key_weights(self, category: int=None):
+        cnt = self.get_all_unique_key_attributes(category)
+        weights = {k: ((v / self.total[str(category)]) if category is \
+            not None else (v / self.total['all'])) for k, v in cnt.items()}
+        return weights
 
     def find_all(self, attrs: Dict, category: int=None):
         pass

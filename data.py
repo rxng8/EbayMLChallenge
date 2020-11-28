@@ -27,6 +27,7 @@ class Data():
         self.primary_image_url: str = row[1]
         self.all_image_urls: List[str] = row[2].split(";")
         self.attributes: defaultdict = self.parse_attributes(row[3])
+        self.attributes_str: str = self.build_attributes_string()
         self.id = row[4]
 
     def strip_string(self, s: str):
@@ -39,6 +40,16 @@ class Data():
         # Strip space left and right
         ans = ans.strip()
         return ans
+
+    # def build_attributes_string(self):
+    #     s = [k + ": " + (", ".join(v)) for k, v in self.attributes.items()]
+    #     s = "; ".join(s)
+    #     return s
+
+    def build_attributes_string(self):
+        s = [k + " " + (" ".join(v)) for k, v in self.attributes.items()]
+        s = " ".join(s)
+        return s
 
     def parse_attributes(self, attr: str) -> defaultdict:
         """ The parsing logic is
@@ -146,4 +157,5 @@ def test_show_all_images():
     # plt.show()
 
 if __name__ == "__main__":
-    test_show_all_images()
+    # test_show_all_images()
+    pass
