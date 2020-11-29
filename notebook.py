@@ -26,6 +26,8 @@ from dataset import Dataset
 from preprocessor import Preprocessor
 from data import Data
 from embedding import Embedding
+from birch import BirchNode, ClusteringFeature, BirchTree, BirchDriver
+from postprocessor import PostProcessor
 
 # CONFIGS and CONSTANTS
 DTA_FOLDER_PATH = Path("dataset")
@@ -259,6 +261,23 @@ e = Embedding(d, 1, key_list)
 # %%
 
 e.models[key_list[0]].wv.vocab
+
+# %%
+
+# Clustering the data according to category 1 ----- Main Code -----
+
+d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
+q = DatasetQuery(d)
+n_first_key_to_cluster = 5
+key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
+models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
+
+# Working from here
+birch_tree = BirchTree(d, models)
+birch_tree.build_tree()
+post_processor = PostProcessor(birch_tree)
+post_processor.process()
+post_processor.export_tsv()
 
 # %%
 
