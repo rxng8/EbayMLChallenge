@@ -26,8 +26,7 @@ class CFTree:
     def __init__(self, dataset: Dataset, models: Dict[str, Word2Vec]):
         self.models = models
         self.d = dataset
-        self.root = BirchNode()
-        pass
+        self.root = None
     
     @staticmethod
     def add_data_to_node(node: BirchNode, data_point: Data):
@@ -56,21 +55,29 @@ class CFTree:
     def recompute_clustering_feature_triplets(self):
         pass
 
+    # Different method name? Cluster? Clusterize? Tree clusterize?
     def build_tree(self):
+        data_id_list = []
+        self.root = BirchNode(data_id_list, False)
         pass
 
 class BirchNode:
-    def __init__(self):
-        
-        self.is_leaf = False
+    def __init__(self, data_id_list: List[int], is_leaf: bool):
+        # Whether this node is the leaf or not
+        self.is_leaf = is_leaf
+
         # Non-leaf node does not have next and prev pointer.
         self.prev: BirchNode= None
         self.next :BirchNode= None
+
         # The number of clustring children must be equal to the number
         # of children it has
         # Leaf node does not have birchnode children
         self.cf_children: List[ClusteringFeature] = []
         self.children: List[BirchNode] = []
+
+        # The pool of data that is in this node to be clustered.
+        self.data_id_list: List[int]=data_id_list
 
 class ClusteringFeature:
     def __init__(self):
