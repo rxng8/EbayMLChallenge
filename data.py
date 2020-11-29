@@ -51,6 +51,8 @@ class Data():
         s = " ".join(s)
         return s
 
+    # def build_attributes_string(self):
+
     def parse_attributes(self, attr: str) -> defaultdict:
         """ The parsing logic is
 

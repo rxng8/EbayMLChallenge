@@ -1,17 +1,51 @@
 # %%
 
 from typing import List, Dict, Tuple
+import time
+import sys
+from tqdm import trange, tqdm
 
 import numpy as np
+import collections
 import spacy
 from gensim.models import Word2Vec
 from sklearn.metrics.pairwise import cosine_similarity
 
+from dataset import Dataset
+
 class Embedding:
-    def __init__(self, sentences: List[List[str]]):
-        # self.model = spacy.load('en_core_web_md')
-        self.model = Word2Vec(sentences, min_count=1)
-        pass
+    def __init__(self, dataset: Dataset, category: int, key_list: List[str]=None):
+        self.d = dataset
+        self.category = str(category)
+        self.key_list = key_list
+        self.models :Dict[str, Word2Vec]= self.extract_all_keys_vocab()
+
+    def extract_all_keys_vocab(self) -> Dict[str, Word2Vec]:
+        models: Dict[str, Word2Vec] = collections.defaultdict()
+        sentences_matrix: Dict[str, List[List[str]]]= collections.defaultdict(list)
+        
+        # loop throuygh every data in the category
+        # build the sentences matrix: item key -> list of value(a 
+        # list of value of an item is considered a sentence), appending a
+        # sentence to an array create a 2d array of multiple sentence
+        
+        print("Extracting value data sentence to glob...")
+        with tqdm(total=len(self.d.category_map[self.category])) as pbar:
+            for data_id in self.d.category_map[self.category]:
+                data = self.d.dataset[data_id]
+                for key_attr, val_attrs in data.attributes.items():
+                    sentences_matrix[key_attr].append(val_attrs)
+                pbar.update(1)
+        print("Done!")
+
+        print("Creating Word2Vec models from globs...")
+        with tqdm(total=len(sentences_matrix.items())) as pbar:
+            for key, sentences in sentences_matrix.items():
+                models[key] = Word2Vec(sentences, min_count=1)
+                pbar.update(1)
+        print("Done!")
+
+        return models
 
     # def encode_sentence(self, sentence: str) -> np.ndarray:
     #     # doc = self.model(sentence)
@@ -48,80 +82,59 @@ class Embedding:
         
         return np.asarray(sent_vec) / numw
 
+    
 
-
-# %%
-
-### MAIN ###
-
-"""
-    Refer to this link: 
-    https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/
-
-    Embed words with noise:
-    https://www.groundai.com/project/towards-robust-word-embeddings-for-noisy-texts/1
-"""
 
 
 # %%
+if __name__ == '__main__':
+    ### MAIN ###
 
-from gensim.models import Word2Vec
-# test sentences
+    """
+        Refer to this link: 
+        https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/
 
-sentences = [["38"], ['40'], ["98"], ["Eagle", "Eye"], \
-    ['Eaggle//', 'eye'], ["Eagle", "Eye"]]
-
-model = Word2Vec(sentences, min_count=1)
-
-# %%
-
-
-def sent_vectorizer(sent: str, model: Word2Vec) -> np.ndarray:
-    """Take the mean of every word vector in the sentence to produce a sentence vector.
-
-    Args:
-        sent ([type]): [description]
-        model ([type]): [description]
-
-    Returns:
-        [type]: [description]
+        Embed words with noise:
+        https://www.groundai.com/project/towards-robust-word-embeddings-for-noisy-texts/1
     """
 
-    sent_vec =[]
-    numw = 0
-    for w in sent:
-        try:
-            if numw == 0:
-                sent_vec = model[w]
-            else:
-                sent_vec = np.add(sent_vec, model[w])
-            numw+=1
-        except:
-            pass
-     
-    return np.asarray(sent_vec) / numw
-# %%
-# model.wv.similarity("Eaggle//", "Eagle")
-p1 = ["Eagle", "Eye"]
-p2 = ["Eaggle//", "28"]
-from sklearn.metrics.pairwise import cosine_similarity
-cosine_similarity([sent_vectorizer(p1, model)], 
-    [sent_vectorizer(p2, model)])
+    from gensim.models import Word2Vec
+    # test sentences
 
-# %%
-" ".join(p2)
-# %%
-sent_vectorizer(p2, model)
-# %%
-model.wv.vocab
+    sentences = [["27 inch", 'lemon'], ['27 in', "lemon"], ["27 inch", 'not lemon'], ["29", "inch"], \
+        ['28 inch', 'lemon'], ["40", "in"]]
 
+    model = Word2Vec(sentences, min_count=1)
 
+    # %%
 
+    # Compare the similarity of word
+    # TODO: if we consider a whole element of the value attr a word, there is cases
+    # that they are sentences, and word vector still treat them as word.
+    model.wv.similarity("27 inch", "28 inch")
+    # %%
+    # Compare the similarity of sentence
 
+    p1 = sentences[0]
+    p2 = sentences[3]
+    from sklearn.metrics.pairwise import cosine_similarity
+    cosine_similarity([Embedding.sent_vectorizer(p1, model)], 
+        [Embedding.sent_vectorizer(p2, model)])
+
+    # %%
+    " ".join(p2)
+    # %%
+    Embedding.sent_vectorizer(p2, model)
+    # %%
+    model.wv.vocab
 
 
 
-# %%
+
+
+
+
+    # %%
 
 
 
