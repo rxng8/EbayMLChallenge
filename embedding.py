@@ -14,12 +14,17 @@ from sklearn.metrics.pairwise import cosine_similarity
 from dataset import Dataset
 
 class Embedding:
-    def __init__(self, dataset: Dataset, category: int, key_list: List[str]=None):
+    def __init__(self, 
+                dataset: Dataset=None, 
+                category: int=-1, 
+                key_list: List[str]=None):
+        # Deprecated variables
         self.d = dataset
         self.category = str(category)
         self.key_list = key_list
         self.models :Dict[str, Word2Vec]= self.extract_all_keys_vocab()
 
+    # Deprecated method
     def extract_all_keys_vocab(self) -> Dict[str, Word2Vec]:
         models: Dict[str, Word2Vec] = collections.defaultdict()
         sentences_matrix: Dict[str, List[List[str]]]= collections.defaultdict(list)
@@ -35,6 +40,48 @@ class Embedding:
                 data = self.d.dataset[data_id]
                 for key_attr, val_attrs in data.attributes.items():
                     sentences_matrix[key_attr].append(val_attrs)
+                pbar.update(1)
+        print("Done!")
+
+        print("Creating Word2Vec models from globs...")
+        with tqdm(total=len(sentences_matrix.items())) as pbar:
+            for key, sentences in sentences_matrix.items():
+                models[key] = Word2Vec(sentences, min_count=1)
+                pbar.update(1)
+        print("Done!")
+
+        return models
+
+    @staticmethod
+    def extract_keys_vocab(d: Dataset, 
+                            category: int, 
+                            key_list: List[str]) -> Dict[str, Word2Vec]:
+        """[summary]
+
+        Args:
+            d (Dataset): [description]
+            category (int): [description]
+            key_list (List[str]): [description]
+
+        Returns:
+            Dict[str, Word2Vec]: The length of dictionary is expected to have
+                the same length as the key_list
+        """
+        models: Dict[str, Word2Vec] = collections.defaultdict()
+        sentences_matrix: Dict[str, List[List[str]]]= collections.defaultdict(list)
+        
+        # loop throuygh every data in the category
+        # build the sentences matrix: item key -> list of value(a 
+        # list of value of an item is considered a sentence), appending a
+        # sentence to an array create a 2d array of multiple sentence
+        
+        print("Extracting value data sentence to glob...")
+        with tqdm(total=len(d.category_map[str(category)])) as pbar:
+            for data_id in d.category_map[str(category)]:
+                data = d.dataset[data_id]
+                for key_attr, val_attrs in data.attributes.items():
+                    if key_attr in key_list:
+                        sentences_matrix[key_attr].append(val_attrs)
                 pbar.update(1)
         print("Done!")
 
@@ -68,7 +115,7 @@ class Embedding:
             [type]: [description]
         """
 
-        sent_vec =[]
+        sent_vec = []
         numw = 0
         for w in sentence:
             try:
