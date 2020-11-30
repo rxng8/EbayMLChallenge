@@ -94,9 +94,9 @@ class DatasetQuery:
                     cnt[k][attr] += 1
         return cnt
 
-    def get_most_frequent_keys(self, category: int=None, head: int=10) -> List[str]:
+    def get_most_frequent_keys(self, category: int=None, head: int=10) -> np.ndarray:
         counter = self.get_all_unique_key_attributes(category)
-        return counter.most_common(head)
+        return np.asarray(counter.most_common(head))
 
     def get_key_weights(self, category: int=None):
         cnt = self.get_all_unique_key_attributes(category)
