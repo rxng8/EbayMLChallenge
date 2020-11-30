@@ -125,7 +125,7 @@ class Data():
             # fig.add_subplot(i,2,1)
             plt.imshow(img)
         plt.show()
-        
+
     def __str__(self):
         string = ""
         string += "Category: " + str(self.category) + "; "

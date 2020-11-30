@@ -1,5 +1,5 @@
 from data import Data
-from typing import List
+from typing import List, Dict, Tuple
 import collections
 import random
 import numpy as np
@@ -49,6 +49,18 @@ class Dataset:
                 #         break
         except:
             print(f"cannot add data: {line}; row length: {len(row)}") 
+
+    def get_data(self, data_id: int) -> Data:
+        return self.dataset[data_id]
+    
+    def get_data_key_list(self, data_id: int) -> List[str]:
+        return self.dataset[data_id].attributes.keys()
+
+    def get_data_value_list(self, data_id: int) -> List[str]:
+        return self.dataset[data_id].attributes.values()
+
+    def get_data_attributes(self, data_id) -> Dict[str, List[str]]:
+        return self.dataset[data_id].attributes.items()
 
     @staticmethod
     def load_dataset_from_binary(path):
