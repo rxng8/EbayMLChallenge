@@ -273,7 +273,7 @@ key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
 models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
 
 # Working from here
-birch_tree = BirchTree(d, models)
+birch_tree = BirchTree(d, 1, models)
 birch_tree.build_tree()
 post_processor = PostProcessor(birch_tree)
 post_processor.process()
