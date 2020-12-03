@@ -131,10 +131,36 @@ class Embedding:
 
     
 
+def test():
+    # test sentences
 
+    sentences = [["27 inch", 'lemon'], ['27 in', "lemon"], ["27 inch", 'not lemon'], ["29", "inch"], \
+        ['28 inch', 'lemon'], ["40", "in"]]
+
+    model = Word2Vec(sentences, min_count=1)
+
+    # Compare the similarity of word
+    # TODO: if we consider a whole element of the value attr a word, there is cases
+    # that they are sentences, and word vector still treat them as word.
+    model.wv.similarity("27 inch", "28 inch")
+
+    # Compare the similarity of sentence
+
+    p1 = sentences[0]
+    p2 = sentences[3]
+    from sklearn.metrics.pairwise import cosine_similarity
+    cosine_similarity([Embedding.sent_vectorizer(p1, model)], 
+        [Embedding.sent_vectorizer(p2, model)])
+
+    " ".join(p2)
+
+    Embedding.sent_vectorizer(p2, model)
+
+    model.wv.vocab
 
 # %%
 if __name__ == '__main__':
+    
     ### MAIN ###
 
     """
@@ -144,45 +170,8 @@ if __name__ == '__main__':
         Embed words with noise:
         https://www.groundai.com/project/towards-robust-word-embeddings-for-noisy-texts/1
     """
-
-    from gensim.models import Word2Vec
-    # test sentences
-
-    sentences = [["27 inch", 'lemon'], ['27 in', "lemon"], ["27 inch", 'not lemon'], ["29", "inch"], \
-        ['28 inch', 'lemon'], ["40", "in"]]
-
-    model = Word2Vec(sentences, min_count=1)
-
-    # %%
-
-    # Compare the similarity of word
-    # TODO: if we consider a whole element of the value attr a word, there is cases
-    # that they are sentences, and word vector still treat them as word.
-    model.wv.similarity("27 inch", "28 inch")
-    # %%
-    # Compare the similarity of sentence
-
-    p1 = sentences[0]
-    p2 = sentences[3]
-    from sklearn.metrics.pairwise import cosine_similarity
-    cosine_similarity([Embedding.sent_vectorizer(p1, model)], 
-        [Embedding.sent_vectorizer(p2, model)])
-
-    # %%
-    " ".join(p2)
-    # %%
-    Embedding.sent_vectorizer(p2, model)
-    # %%
-    model.wv.vocab
-
-
-
-
-
-
-
-    # %%
-
+    # test()
+    pass
 
 
 
