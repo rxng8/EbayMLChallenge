@@ -121,6 +121,9 @@ class BirchNode:
     def set_model(self, model: Word2Vec):
         self.model = model
 
+    def set_key(self, key: str):
+        self.key = key
+
     def add_data(self, data_id: int):
         """ Append the data id into data id list.
 
@@ -236,18 +239,39 @@ class BirchTree:
         self.d = dataset
         self.root = BirchNode([])
         self.c = str(category)
+        # self.key_list = list(self.models.keys())
     
     # Different method name? Cluster? Clusterize? Tree clusterize?
     def build_tree(self):
         data_id_list = self.d.category_map[self.c]
-        self.root = BirchNode(data_id_list, False)
+        root = BirchNode(data_id_list, False)
+        queue = []
+        queue.append(root)
 
-        # Looping through each key in key list:
-        #   Build model word to vec
-        #   Set model for each node
-        #   Push the expand through a queue.
-        
-        pass
+        # Looping through each key in key list, perform each
+        #   depth once at a time.
+        for key_attr, model in self.models.items():
+            tmp_queue = []
+            while len(queue) != 0:
+                node = queue.pop(0)
+                
+                # Set up node
+                node.set_model(model)
+                node.set_key(key_attr)
+
+                # Clusterize!
+                node.assign_data_to_new_clusters(self.d)
+                
+                # Push every child of the node to a temporary queue.
+                for child in node.children:
+                    tmp_queue.append(child)
+
+            # Push the expansion of every nodes in the current depth to
+            # the main queue.
+            queue += tmp_queue
+
+        self.root = root
+        return self.root
 
 # Deprecated
 class BirchDriver:
