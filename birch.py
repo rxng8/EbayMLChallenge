@@ -8,18 +8,82 @@ from gensim.models import Word2Vec
 
 from data import Data
 from embedding import Embedding
+from preprocessor import Preprocessor
 
 class ClusteringFeature:
     def __init__(self, dim: int=300):
         # The dimension of the the word vector
         self.dim = dim
         self.n_data_points = 0
-        self.linear_sum: float= 0
+        # Shape (dim,)
+        self.linear_sum: np.ndarray= np.asarray([0] * dim)
+        # Shape (dim,)
+        self.mean: np.ndarray = np.asarray([0] * dim)
         # self.square_sum: float= 0
+
+    def add_vector(self, vector: np.ndarray) -> None:
+        """Use this at your own risk!
+
+        Args:
+            vector (np.ndarray): [description]
+        """
+        assert vector.shape == (self.dim,)
+        
+        self.linear_sum += vector
+        self.n_data_points += 1
+        self.mean = self.linear_sum / self.n_data_points
+    
+    def recompute_clustering_feature_triplets(self):
+        # Computed in the add_vector method.
+        pass
+
+    def check_adding_validity(self, vector: np.ndarray, similarity_threshold: float=0.5) -> bool:
+        """check if it is possible to add into this cluster.
+
+        Args:
+            vector (np.ndarray): vector with dim equal to this clustering feature dim.
+            similarity_threshold (float, optional): can add if the similarity to the mean 
+                is greater than or equal to the threshold. Defaults to 0.5.
+
+        Returns:
+            bool: True if the cosine similarity of the vector to the mean vector is greater 
+                than or euqal to the threshold. False otherwise.
+        """
+        return ClusteringFeature.find_vector_similarity(vector, self.mean) >= similarity_threshold
+
+    @staticmethod
+    def find_vector_similarity(vector1: np.ndarray, vector2: np.ndarray) -> float:
+        """[summary]
+
+        Args:
+            model (Word2Vec): [description]
+            vector1 (np.ndarray): [description]
+            vector2 (np.ndarray): [description]
+
+        Returns:
+            float: [description]
+        """
+        return float(cosine_similarity(vector1, vector2))
+
+    @staticmethod
+    def find_sentence_similarity(model: Word2Vec, sentence1: List[str], sentence2: List[str]):
+        """ Find the similarity of the two sentences using cosine similarity.
+
+        Args:
+            model (Word2Vec): [description]
+            sentence1 (List[str]): [description]
+            sentence2 (List[str]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        return float(cosine_similarity(
+                            [Embedding.sent_vectorizer(sentence1, model)], 
+                            [Embedding.sent_vectorizer(sentence2, model)]))
 
 class BirchNode:
     def __init__(self, 
-                data_id_list: List[int], 
+                data_id_list: List[int]=[], 
                 is_leaf: bool=False, 
                 dim: int=300):
         """[summary]
@@ -49,7 +113,10 @@ class BirchNode:
         self.data_id_list: List[int]=data_id_list
 
         # The Word2Vec model for this node to cluster.
-        self.model = None
+        self.model: Word2Vec = None
+
+        # The key of the item attribute belong to this only node.
+        self.key: str=None
 
     def set_model(self, model: Word2Vec):
         self.model = model
@@ -63,14 +130,43 @@ class BirchNode:
         # Append data to data_id_list
         self.data_id_list.append(data_id)
 
-    def assign_data_to_new_cluster(self, dataset: Dataset):
-        
-        pass
+    def assign_data_to_new_clusters(self, dataset: Dataset) -> None:
+        """[summary]
 
+        Args:
+            dataset (Dataset): [description]
+        """
+
+        # Looping through every data in the pool.
+        # For each data, loop through every clustering feature, 
+        #   If it can: add the data to the child Birch Node corressponding 
+        #       with that clustering feature.
+        #   Else: Create a new clustering feature and node, and add the data
+        #     to that corresponding Birch node.
+
+        for data_id in self.data_id_list:
+            # Get the vector from the data attribute list of words.
+            vector: np.ndarray = Preprocessor.encode_sentence(self.model, dataset, data_id, self.key)
+            added: bool = False
+            for id, cluster_feature in enumerate(self.cf_children):
+                if cluster_feature.check_adding_validity(vector):
+                    cluster_feature.add_vector(vector)
+                    self.children[id].add_data(data_id)
+                    added = True
+                    break
+            # If it is not added then create new clustering feature and birch node
+            # and append them to the appropriate list.
+            if not added:
+                new_cf = ClusteringFeature()
+                new_cf.add_vector(vector)
+                self.cf_children.append(new_cf)
+                new_node = BirchNode()
+                self.children.append(new_node)
+
+    # Deprecated method
     def can_add(self, cluster: ClusteringFeature, 
-                data_id: int, 
-                dataset: Dataset, 
-                threshold: float=.5):
+                vector: np.ndarray,
+                similarity_threshold: float=.5):
         """ Return whether the data can be add to this cluster.
 
         Args:
@@ -78,42 +174,36 @@ class BirchNode:
                 cluster to be added
             data_id (int): the actual data_id
             dataset (Dataset): the dataset
-            threshold (float, optional): The threshold where if the similarity
-                of the data sentence to the mean of the clustering feature is
-                greater than, then the data can be add to the cluster. Defaults 
-                to .5.
+            similarity_threshold (float, optional): The threshold where if the 
+                similarity of the data sentence to the mean of the clustering 
+                feature is greater than, then the data can be add to the cluster. 
+                Defaults to .5.
 
         Returns:
             bool: True if the data can be added to the cluster, false otherwise.
         """
-
-        return False
-
-    def recompute_clustering_feature_triplets(self):
-        pass
+        assert self.model != None, "Wrong behavior!"
+        return cluster.check_adding_validity(vector, similarity_threshold)
 
     def clusterize(self):
         """ Clusterize the data_id in the data pool by creating a list of
         BirchNode children, add the clusted data_id to each child. We can 
         achieve this by using the clustering features which associate with
         each child.
+
+        See def assign_data_to_new_clusters(self, dataset: Dataset)
         """
         pass
 
-    @staticmethod
-    def find_similarity(model: Word2Vec, sentence1: List[str], sentence2: List[str]):
-        """ Find the similarity of the two sentences using cosine similarity.
+    def expand(self):
+        """ Clusterize the data_id in the data pool by creating a list of
+        BirchNode children, add the clusted data_id to each child. We can 
+        achieve this by using the clustering features which associate with
+        each child.
 
-        Args:
-            model (Word2Vec): [description]
-            sentence1 (List[str]): [description]
-            sentence2 (List[str]): [description]
-
-        Returns:
-            [type]: [description]
+        See def assign_data_to_new_clusters(self, dataset: Dataset)
         """
-        return cosine_similarity([Embedding.sent_vectorizer(sentence1, model)], 
-            [Embedding.sent_vectorizer(sentence2, model)])
+        pass
 
     @staticmethod
     def get_mean_vector(vector_list: np.ndarray) -> np.ndarray:
@@ -132,7 +222,9 @@ class BirchTree:
         This class build the whole set of the tree, and assign each data point
         to each node in the tree
     """
-    def __init__(self, dataset: Dataset, 
+    def __init__(self, 
+                dataset: Dataset,
+                category: int,
                 models: Dict[str, Word2Vec]):
         """[summary]
 
@@ -143,13 +235,21 @@ class BirchTree:
         self.models = models
         self.d = dataset
         self.root = BirchNode([])
+        self.c = str(category)
     
     # Different method name? Cluster? Clusterize? Tree clusterize?
     def build_tree(self):
-        data_id_list = []
+        data_id_list = self.d.category_map[self.c]
         self.root = BirchNode(data_id_list, False)
+
+        # Looping through each key in key list:
+        #   Build model word to vec
+        #   Set model for each node
+        #   Push the expand through a queue.
+        
         pass
 
+# Deprecated
 class BirchDriver:
     """
         Refer to this link:
