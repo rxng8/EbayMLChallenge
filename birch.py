@@ -2,6 +2,7 @@
 import numpy as np
 from dataset import Dataset
 from typing import List, Tuple, Dict
+from tqdm import tqdm
 
 from sklearn.metrics.pairwise import cosine_similarity
 from gensim.models import Word2Vec
@@ -11,14 +12,14 @@ from embedding import Embedding
 from preprocessor import Preprocessor
 
 class ClusteringFeature:
-    def __init__(self, dim: int=300):
+    def __init__(self, dim: int=100):
         # The dimension of the the word vector
         self.dim = dim
         self.n_data_points = 0
         # Shape (dim,)
-        self.linear_sum: np.ndarray= np.asarray([0] * dim)
+        self.linear_sum: np.ndarray= np.asarray([0] * dim, dtype=np.dtype('float64'))
         # Shape (dim,)
-        self.mean: np.ndarray = np.asarray([0] * dim)
+        self.mean: np.ndarray = np.asarray([0] * dim, dtype=np.dtype('float64'))
         # self.square_sum: float= 0
 
     def add_vector(self, vector: np.ndarray) -> None:
@@ -27,6 +28,7 @@ class ClusteringFeature:
         Args:
             vector (np.ndarray): [description]
         """
+        # print(f"Vector shape: {str(vector.shape)}")
         assert vector.shape == (self.dim,)
         
         self.linear_sum += vector
@@ -63,7 +65,7 @@ class ClusteringFeature:
         Returns:
             float: [description]
         """
-        return float(cosine_similarity(vector1, vector2))
+        return float(cosine_similarity(vector1.reshape(1,-1), vector2.reshape(1,-1)))
 
     @staticmethod
     def find_sentence_similarity(model: Word2Vec, sentence1: List[str], sentence2: List[str]):
@@ -85,7 +87,7 @@ class BirchNode:
     def __init__(self, 
                 data_id_list: List[int]=[], 
                 is_leaf: bool=False, 
-                dim: int=300):
+                dim: int=100):
         """[summary]
 
         Args:
@@ -147,24 +149,45 @@ class BirchNode:
         #   Else: Create a new clustering feature and node, and add the data
         #     to that corresponding Birch node.
 
-        for data_id in self.data_id_list:
-            # Get the vector from the data attribute list of words.
-            vector: np.ndarray = Preprocessor.encode_sentence(self.model, dataset, data_id, self.key)
-            added: bool = False
-            for id, cluster_feature in enumerate(self.cf_children):
-                if cluster_feature.check_adding_validity(vector):
-                    cluster_feature.add_vector(vector)
-                    self.children[id].add_data(data_id)
-                    added = True
+        cnt = 0
+
+
+        print("Assigning data to cluster...")
+        # Tqdm wrapper
+        with tqdm(total=len(self.data_id_list)) as pbar:
+            for data_id in self.data_id_list:
+                cnt += 1
+                # Get the vector from the data attribute list of words.
+                vector: np.ndarray = Preprocessor.encode_sentence(self.model, 
+                                                                    dataset, 
+                                                                    data_id, 
+                                                                    self.key)
+                added: bool = False
+                for id, cluster_feature in enumerate(self.cf_children):
+                    if cluster_feature.check_adding_validity(vector):
+                        cluster_feature.add_vector(vector)
+                        self.children[id].add_data(data_id)
+                        added = True
+                        break
+                # If it is not added then create new clustering feature and birch node
+                # and append them to the appropriate list.
+                if not added:
+                    new_cf = ClusteringFeature()
+                    new_cf.add_vector(vector)
+                    self.cf_children.append(new_cf)
+                    new_node = BirchNode()
+                    self.children.append(new_node)
+                pbar.update(1)
+                if cnt > 1000:
+                    # print(f"\nData vector: {vector}")
+                    # print(f"Data cf children length: {len(self.cf_children)}")
+                    # print(f"Data children length: {len(self.children)}")
                     break
-            # If it is not added then create new clustering feature and birch node
-            # and append them to the appropriate list.
-            if not added:
-                new_cf = ClusteringFeature()
-                new_cf.add_vector(vector)
-                self.cf_children.append(new_cf)
-                new_node = BirchNode()
-                self.children.append(new_node)
+        print()
+        print(f"assigned! ", end=", ")
+        print(f"Data cf children length: {len(self.cf_children)}")
+        print(f"Data children length: {len(self.children)}")
+        print(f"Data id list: {len(self.data_id_list)}")
 
     # Deprecated method
     def can_add(self, cluster: ClusteringFeature, 
@@ -228,7 +251,8 @@ class BirchTree:
     def __init__(self, 
                 dataset: Dataset,
                 category: int,
-                models: Dict[str, Word2Vec]):
+                models: Dict[str, Word2Vec],
+                head: int=-1):
         """[summary]
 
         Args:
@@ -239,11 +263,17 @@ class BirchTree:
         self.d = dataset
         self.root = BirchNode([])
         self.c = str(category)
+        self.head = head
         # self.key_list = list(self.models.keys())
     
     # Different method name? Cluster? Clusterize? Tree clusterize?
     def build_tree(self):
+        """
+        Build a tree with the first `head` number of data if head is specified.
+        """
         data_id_list = self.d.category_map[self.c]
+        if self.head != -1:
+            data_id_list = data_id_list[:self.head]
         root = BirchNode(data_id_list, False)
         queue = []
         queue.append(root)
@@ -251,6 +281,7 @@ class BirchTree:
         # Looping through each key in key list, perform each
         #   depth once at a time.
         for key_attr, model in self.models.items():
+            print(f"Clusterizing according to key \"{key_attr}\"...")
             tmp_queue = []
             while len(queue) != 0:
                 node = queue.pop(0)
