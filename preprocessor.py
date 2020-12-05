@@ -32,8 +32,23 @@ class Preprocessor:
     def encode_sentence(model: Word2Vec, 
                         d: Dataset, 
                         data_id: int, 
-                        key: str) -> np.ndarray:
+                        key: str,
+                        dim: int=100) -> np.ndarray:
+        """
+
+        Args:
+            model (Word2Vec): [description]
+            d (Dataset): [description]
+            data_id (int): [description]
+            key (str): [description]
+            dim: int=100. Dimension of the data. Default to 100.
+        Returns:
+            np.ndarray: shape (dim,). Return a vector of [0] * the same dim 
+                if there are no key in that data.
+        """
         data: Data = d.get_data(data_id)
+        if not data.attributes[key]:
+            return np.asarray([0] * dim, dtype=np.dtype('float64'))
         word_list: List[str] = data.attributes[key]
         return Preprocessor.sent_vectorizer(word_list, model)
         
