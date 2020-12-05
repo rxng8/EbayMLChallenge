@@ -1,4 +1,5 @@
 # %%
+import sys
 import numpy as np
 from dataset import Dataset
 from typing import List, Tuple, Dict
@@ -39,7 +40,9 @@ class ClusteringFeature:
         # Computed in the add_vector method.
         pass
 
-    def check_adding_validity(self, vector: np.ndarray, similarity_threshold: float=0.5) -> bool:
+    def check_adding_validity(self, vector: np.ndarray, 
+                            similarity_threshold: float=0.7,
+                            verbose: bool=False) -> bool:
         """check if it is possible to add into this cluster.
 
         Args:
@@ -51,8 +54,11 @@ class ClusteringFeature:
             bool: True if the cosine similarity of the vector to the mean vector is greater 
                 than or euqal to the threshold. False otherwise.
         """
-        return ClusteringFeature.find_vector_similarity(vector, self.mean) >= similarity_threshold
-
+        sim = ClusteringFeature.find_vector_similarity(vector, self.mean)
+        b =  sim >= similarity_threshold
+        if verbose:
+            print("Can add: "+str(b) + " because computed similarity is " + str(sim))
+        return b
     @staticmethod
     def find_vector_similarity(vector1: np.ndarray, vector2: np.ndarray) -> float:
         """[summary]
@@ -112,7 +118,7 @@ class BirchNode:
         self.children: List[BirchNode] = []
 
         # The pool of data that is in this node to be clustered.
-        self.data_id_list: List[int]=data_id_list
+        self.data_id_list: List[int]=data_id_list.copy()
 
         # The Word2Vec model for this node to cluster.
         self.model: Word2Vec = None
@@ -135,8 +141,11 @@ class BirchNode:
         # Append data to data_id_list
         self.data_id_list.append(data_id)
 
-    def assign_data_to_new_clusters(self, dataset: Dataset) -> None:
+    def assign_data_to_new_clusters(self, dataset: Dataset, verbose: bool=False) -> None:
         """[summary]
+        TODO: Handle cluster with non key data.
+        TODO: Handle vector 0.
+        TODO: Handle cluster with only 1 node.
 
         Args:
             dataset (Dataset): [description]
@@ -150,12 +159,16 @@ class BirchNode:
         #     to that corresponding Birch node.
 
         cnt = 0
-
-
-        print("Assigning data to cluster...")
+        if verbose:
+            print("Assigning data to cluster...")
+        
         # Tqdm wrapper
         with tqdm(total=len(self.data_id_list)) as pbar:
             for data_id in self.data_id_list:
+                dta = dataset.get_data(data_id)
+                attr_str = dta.attributes[self.key]
+                if verbose:
+                    print(f"Working with data {data_id}: {attr_str}...")
                 cnt += 1
                 # Get the vector from the data attribute list of words.
                 vector: np.ndarray = Preprocessor.encode_sentence(self.model, 
@@ -164,7 +177,7 @@ class BirchNode:
                                                                     self.key)
                 added: bool = False
                 for id, cluster_feature in enumerate(self.cf_children):
-                    if cluster_feature.check_adding_validity(vector):
+                    if cluster_feature.check_adding_validity(vector, verbose):
                         cluster_feature.add_vector(vector)
                         self.children[id].add_data(data_id)
                         added = True
@@ -172,22 +185,30 @@ class BirchNode:
                 # If it is not added then create new clustering feature and birch node
                 # and append them to the appropriate list.
                 if not added:
+                    if verbose:
+                        print("Cannot find cluster, creating a new cluster.")
                     new_cf = ClusteringFeature()
                     new_cf.add_vector(vector)
                     self.cf_children.append(new_cf)
                     new_node = BirchNode()
+                    new_node.add_data(data_id)
                     self.children.append(new_node)
                 pbar.update(1)
-                if cnt > 1000:
+                if cnt > 10000:
                     # print(f"\nData vector: {vector}")
                     # print(f"Data cf children length: {len(self.cf_children)}")
                     # print(f"Data children length: {len(self.children)}")
-                    break
+                    print("Wrong behavior")
+                    # sys.exit()
+                    # break
         print()
-        print(f"assigned! ", end=", ")
-        print(f"Data cf children length: {len(self.cf_children)}")
-        print(f"Data children length: {len(self.children)}")
-        print(f"Data id list: {len(self.data_id_list)}")
+
+        if verbose:
+            
+            print(f"assigned! ", end=", ")
+            print(f"Data cf children length: {len(self.cf_children)}")
+            print(f"Data children length: {len(self.children)}")
+            print(f"Data id list: {len(self.data_id_list)}")
 
     # Deprecated method
     def can_add(self, cluster: ClusteringFeature, 
@@ -267,7 +288,7 @@ class BirchTree:
         # self.key_list = list(self.models.keys())
     
     # Different method name? Cluster? Clusterize? Tree clusterize?
-    def build_tree(self):
+    def build_tree(self, verbose: bool=False):
         """
         Build a tree with the first `head` number of data if head is specified.
         """
@@ -291,12 +312,14 @@ class BirchTree:
                 node.set_key(key_attr)
 
                 # Clusterize!
-                node.assign_data_to_new_clusters(self.d)
+                node.assign_data_to_new_clusters(self.d, verbose)
                 
                 # Push every child of the node to a temporary queue.
                 for child in node.children:
                     tmp_queue.append(child)
 
+                # break # debug
+            # break # debug
             # Push the expansion of every nodes in the current depth to
             # the main queue.
             queue += tmp_queue
