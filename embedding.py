@@ -83,14 +83,14 @@ class Embedding:
                     if key_attr in key_list:
                         sentences_matrix[key_attr].append(val_attrs)
                 pbar.update(1)
-        print("Done!")
+        print("\nDone!")
 
         print("Creating Word2Vec models from globs...")
         with tqdm(total=len(sentences_matrix.items())) as pbar:
             for key, sentences in sentences_matrix.items():
                 models[key] = Word2Vec(sentences, min_count=1)
                 pbar.update(1)
-        print("Done!")
+        print("\nDone!")
 
         return models
 
