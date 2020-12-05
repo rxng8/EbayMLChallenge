@@ -243,41 +243,87 @@ def test_vectorize_all_database(d: Dataset, category: int):
 # Dataset.save_dataset_to_binary(d, DATASET_BINARY_PATH)
 
 # %%
-d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
-q = DatasetQuery(d)
+# d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
+# q = DatasetQuery(d)
 # print_random_data(q, 2)
 # dta = q.get_random_data(1)
 # print(dta.attributes_str)
 
 # %%
-dta = q.get_random_data(1)
-dta.attributes
+# dta = q.get_random_data(1)
+# dta.attributes
 
 # %%
 
-key_list = np.asarray(q.get_most_frequent_keys(1, 5))[:, 0]
-e = Embedding(d, 1, key_list)
+# key_list = np.asarray(q.get_most_frequent_keys(1, 5))[:, 0]
+# e = Embedding(d, 1, key_list)
 
 # %%
 
-e.models[key_list[0]].wv.vocab
+# e.models[key_list[0]].wv.vocab
 
 # %%
 
 # Clustering the data according to category 1 ----- Main Code -----
 
+print("Loading dataset...")
 d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
 q = DatasetQuery(d)
+print("Done!")
+
+print("Extracting every key to key_list and build model vector...")
 n_first_key_to_cluster = 5
 key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
+# models.keys() is
+# dict_keys(['brand', 'inseam', 'size type', "bottoms size women's", 'material'])
 models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
 
-# Working from here
-birch_tree = BirchTree(d, 1, models)
-birch_tree.build_tree()
-post_processor = PostProcessor(birch_tree)
-post_processor.process()
-post_processor.export_tsv()
 
 # %%
+
+print("Building tree...")
+# Working from here
+birch_tree = BirchTree(d, 1, models, head=10)
+tree = birch_tree.build_tree()
+# post_processor = PostProcessor(birch_tree)
+# post_processor.process()
+# post_processor.export_tsv()
+
+# %%
+
+#traverse tree:
+node1 = tree.children[0].children[0].children[0].children[0]
+node2 = tree.children[0].children[0].children[0].children[0].children[0]
+
+# %%
+
+for data_id in node1.data_id_list:
+    print(d.get_data(data_id))
+
+
+
+# %%
+len(node2.data_id_list)
+
+# %%
+
+node1 = tree.children[0]
+node2 = tree.children[1]
+node3 = tree.children[2]
+node4 = tree.children[3]
+# %%
+len(tree.children)
+# %%
+
+print(len(tree.data_id_list))
+print(len(node1.data_id_list))
+print(len(node2.data_id_list))
+print(len(node3.data_id_list))
+print(len(node4.data_id_list))
+
+# %%
+node11 = node1.children[1]
+for data_id in node11.data_id_list:
+    print(d.get_data(data_id))
+
 
