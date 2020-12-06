@@ -9,12 +9,14 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 import codecs
+import matplotlib.pyplot as plt
 
 import time
 import sys
 from tqdm import tqdm
 
 from gensim.models import Word2Vec
+from sklearn.metrics.pairwise import cosine_similarity
 
 import sys
 # Include the current directory in notebook path
@@ -38,6 +40,9 @@ VALID_FILE_PATH = DTA_FOLDER_PATH / VALID_FILE_NAME
 
 DATASET_BINARY_FILE = Path("dataset.pkl")
 DATASET_BINARY_PATH = DTA_FOLDER_PATH / DATASET_BINARY_FILE
+
+RESULT_FOLDER_PATH = Path("./results")
+TREE_FOLDER_PATH = Path("./trees")
 
 ### CODE BLOCK:
 # Read file
@@ -149,6 +154,22 @@ def print_random_data(q: DatasetQuery, category: int):
     print(dta)
     return dta.get_image(dta.primary_image_url)
 
+def print_data(d: Dataset, data_id: int) -> None:
+    dta = d.get_data(data_id)
+    print(dta)
+    plt.figure()
+    plt.imshow(dta.get_image(dta.primary_image_url))
+    plt.show()
+
+def print_list_data(d: Dataset, l: List[int]) -> None:
+    for data_id in l:
+        print_data(d, data_id)
+
+def print_similarity(model: Word2Vec, d: Dataset, key:str, id1: int, id2: int) -> float:
+    v1: np.ndarray = Preprocessor.encode_sentence(model, d, id1, key)
+    v2: np.ndarray = Preprocessor.encode_sentence(model, d, id2, key)
+    return float(cosine_similarity(v1.reshape(1,-1), v2.reshape(1,-1)))
+
 def matplot_plot(dataset: Dataset):
     # Print random data in each category
     import matplotlib.pyplot as plt
@@ -237,6 +258,7 @@ def test_vectorize_all_database(d: Dataset, category: int):
     print("Done!")
 
 
+
 # %%
 ###### MAIN ########
 # d = get_dataset()
@@ -271,6 +293,8 @@ d = Dataset.load_dataset_from_binary(DATASET_BINARY_PATH)
 q = DatasetQuery(d)
 print("Done!")
 
+# %%
+
 print("Extracting every key to key_list and build model vector...")
 n_first_key_to_cluster = 5
 key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
@@ -283,27 +307,45 @@ models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
 
 print("Building tree...")
 # Working from here
-birch_tree = BirchTree(d, 1, models, head=10)
-tree = birch_tree.build_tree()
-# post_processor = PostProcessor(birch_tree)
-# post_processor.process()
+birch_tree = BirchTree(d, 1, models, head=11000)
+tree = birch_tree.build_tree(verbose=False)
+
+birch_tree.save_birch_tree_to_binary(TREE_FOLDER_PATH)
+
+post_processor = PostProcessor(birch_tree)
+post_processor.process()
 # post_processor.export_tsv()
 
 # %%
+# Cluster key brand
+node10 = tree.children[0] # 62 data
+node11 = tree.children[1] # 30 data
+node12 = tree.children[2] # 5 data
+node13 = tree.children[3] # 2 data
+node14 = tree.children[4] # 1 data
 
-#traverse tree:
-node1 = tree.children[0].children[0].children[0].children[0]
-node2 = tree.children[0].children[0].children[0].children[0].children[0]
+# %%
+
+len(node10.children[0].children)
 
 # %%
 
-for data_id in node1.data_id_list:
-    print(d.get_data(data_id))
-
-
+childnode = tree.children[0]
 
 # %%
-len(node2.data_id_list)
+
+len(tree.children[1].children[1].children)
+
+# %%
+
+print_list_data(d, tree.children[0].children[0].data_id_list)
+
+# %%
+
+# inspect clustering feature of node 13
+cf_node13 = tree.cf_children[3]
+# %%
+
 
 # %%
 
@@ -322,8 +364,42 @@ print(len(node3.data_id_list))
 print(len(node4.data_id_list))
 
 # %%
-node11 = node1.children[1]
-for data_id in node11.data_id_list:
-    print(d.get_data(data_id))
+
+tree_path = "./trees/tree_c1_11000_heads_5_keys.pkl"
+new_tree = BirchTree.load_birch_tree_from_binary(tree_path)
+new_tree.root.children[0].data_id_list
+post_processor = PostProcessor(new_tree)
+post_processor.process()
+post_processor.export_tsv(RESULT_FOLDER_PATH, 1, 5, 11000)
+
+# %%
 
 
+post_processor.result
+
+# %%
+
+
+post_processor.bt.root
+
+
+# %%
+
+root = new_tree.root
+# %%
+
+ptr = root
+for i in range(5):
+    ptr = ptr.children[0]
+
+
+# %%
+
+len(post_processor.result)
+
+# %%
+
+
+print_list_data(d, ['57974', '58019'])
+
+# %%
