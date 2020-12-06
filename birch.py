@@ -4,9 +4,12 @@ import numpy as np
 from dataset import Dataset
 from typing import List, Tuple, Dict
 from tqdm import tqdm
+import time
+import pickle
 
 from sklearn.metrics.pairwise import cosine_similarity
 from gensim.models import Word2Vec
+from pathlib import Path
 
 from data import Data
 from embedding import Embedding
@@ -141,7 +144,9 @@ class BirchNode:
         # Append data to data_id_list
         self.data_id_list.append(data_id)
 
-    def assign_data_to_new_clusters(self, dataset: Dataset, verbose: bool=False) -> None:
+    def assign_data_to_new_clusters(self, dataset: Dataset, 
+                                    verbose: bool=False, 
+                                    pbar=None) -> None:
         """[summary]
         TODO: Handle cluster with non key data.
         TODO: Handle vector 0.
@@ -162,46 +167,45 @@ class BirchNode:
         if verbose:
             print("Assigning data to cluster...")
         
-        # Tqdm wrapper
-        with tqdm(total=len(self.data_id_list)) as pbar:
-            for data_id in self.data_id_list:
-                dta = dataset.get_data(data_id)
-                attr_str = dta.attributes[self.key]
+        
+        for data_id in self.data_id_list:
+            dta = dataset.get_data(data_id)
+            attr_str = dta.attributes[self.key]
+            if verbose:
+                print(f"Working with data {data_id}: {attr_str}...")
+            cnt += 1
+            # Get the vector from the data attribute list of words.
+            vector: np.ndarray = Preprocessor.encode_sentence(self.model, 
+                                                                dataset, 
+                                                                data_id, 
+                                                                self.key)
+            added: bool = False
+            for id, cluster_feature in enumerate(self.cf_children):
+                if cluster_feature.check_adding_validity(vector, verbose=verbose):
+                    cluster_feature.add_vector(vector)
+                    self.children[id].add_data(data_id)
+                    added = True
+                    break
+            # If it is not added then create new clustering feature and birch node
+            # and append them to the appropriate list.
+            if not added:
                 if verbose:
-                    print(f"Working with data {data_id}: {attr_str}...")
-                cnt += 1
-                # Get the vector from the data attribute list of words.
-                vector: np.ndarray = Preprocessor.encode_sentence(self.model, 
-                                                                    dataset, 
-                                                                    data_id, 
-                                                                    self.key)
-                added: bool = False
-                for id, cluster_feature in enumerate(self.cf_children):
-                    if cluster_feature.check_adding_validity(vector, verbose):
-                        cluster_feature.add_vector(vector)
-                        self.children[id].add_data(data_id)
-                        added = True
-                        break
-                # If it is not added then create new clustering feature and birch node
-                # and append them to the appropriate list.
-                if not added:
-                    if verbose:
-                        print("Cannot find cluster, creating a new cluster.")
-                    new_cf = ClusteringFeature()
-                    new_cf.add_vector(vector)
-                    self.cf_children.append(new_cf)
-                    new_node = BirchNode()
-                    new_node.add_data(data_id)
-                    self.children.append(new_node)
+                    print("Cannot find cluster, creating a new cluster.")
+                new_cf = ClusteringFeature()
+                new_cf.add_vector(vector)
+                self.cf_children.append(new_cf)
+                new_node = BirchNode()
+                new_node.add_data(data_id)
+                self.children.append(new_node)
+            if pbar is not None:
                 pbar.update(1)
-                if cnt > 10000:
-                    # print(f"\nData vector: {vector}")
-                    # print(f"Data cf children length: {len(self.cf_children)}")
-                    # print(f"Data children length: {len(self.children)}")
-                    print("Wrong behavior")
-                    # sys.exit()
-                    # break
-        print()
+            # if cnt > 10000:
+                # print(f"\nData vector: {vector}")
+                # print(f"Data cf children length: {len(self.cf_children)}")
+                # print(f"Data children length: {len(self.children)}")
+                # print("Wrong behavior")
+                # sys.exit()
+                # break
 
         if verbose:
             
@@ -285,7 +289,6 @@ class BirchTree:
         self.root = BirchNode([])
         self.c = str(category)
         self.head = head
-        # self.key_list = list(self.models.keys())
     
     # Different method name? Cluster? Clusterize? Tree clusterize?
     def build_tree(self, verbose: bool=False):
@@ -293,7 +296,7 @@ class BirchTree:
         Build a tree with the first `head` number of data if head is specified.
         """
         data_id_list = self.d.category_map[self.c]
-        if self.head != -1:
+        if self.head > 0 and self.head < len(data_id_list):
             data_id_list = data_id_list[:self.head]
         root = BirchNode(data_id_list, False)
         queue = []
@@ -303,29 +306,48 @@ class BirchTree:
         #   depth once at a time.
         for key_attr, model in self.models.items():
             print(f"Clusterizing according to key \"{key_attr}\"...")
-            tmp_queue = []
-            while len(queue) != 0:
-                node = queue.pop(0)
-                
-                # Set up node
-                node.set_model(model)
-                node.set_key(key_attr)
+            time.sleep(0.5)
+            # Tqdm wrapper
+            with tqdm(total=len(data_id_list)) as pbar:
+                tmp_queue = []
+                while len(queue) != 0:
+                    node = queue.pop(0)
+                    
+                    # Set up node
+                    node.set_model(model)
+                    node.set_key(key_attr)
 
-                # Clusterize!
-                node.assign_data_to_new_clusters(self.d, verbose)
-                
-                # Push every child of the node to a temporary queue.
-                for child in node.children:
-                    tmp_queue.append(child)
+                    # Clusterize!
+                    node.assign_data_to_new_clusters(self.d, verbose, pbar=pbar)
+                    
+                    # Push every child of the node to a temporary queue.
+                    for child in node.children:
+                        tmp_queue.append(child)
 
+                    # break # debug
                 # break # debug
-            # break # debug
-            # Push the expansion of every nodes in the current depth to
-            # the main queue.
-            queue += tmp_queue
+                # Push the expansion of every nodes in the current depth to
+                # the main queue.
+                queue += tmp_queue
+            time.sleep(0.5)
+            print()
 
         self.root = root
         return self.root
+
+    @staticmethod
+    def load_birch_tree_from_binary(path):
+        with open(path, 'rb') as f:
+            birchTree = pickle.load(f)
+        return birchTree
+
+    def save_birch_tree_to_binary(self, folder_path: Path):
+        head = self.head if self.head > 0 and self.head < len(self.d.category_map[self.c]) else "full"
+        name = f"tree_c{self.c}_{str(head)}_heads_{len(self.models.items())}_keys.pkl"
+        with open(folder_path / name, 'wb') as f:
+            pickle.dump(self, f)
+
+
 
 # Deprecated
 class BirchDriver:
