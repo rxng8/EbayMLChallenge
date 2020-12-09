@@ -51,3 +51,16 @@ class PostProcessor:
         df = pd.DataFrame(self.result)
         name = f"result_c{category}_{n_heads}_heads_{n_keys}_keys.tsv"
         df.to_csv(result_folder / name, sep='\t', header=False, index=False)
+
+    @staticmethod
+    def merge_tsv(*args) -> pd.DataFrame:
+        """ Merge tsv data into 1 and export a dataframe.
+
+        Returns:
+            pd.DataFrame: [description]
+        """
+        df = pd.DataFrame()
+        for tsv_data in args:
+            tmp = pd.DataFrame(tsv_data)
+            df = pd.concat([df, tmp])
+        return df
