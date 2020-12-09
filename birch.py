@@ -282,7 +282,9 @@ class BirchTree:
 
         Args:
             dataset (Dataset): [description]
+            category (int): [description]
             models (Dict[str, Word2Vec]): [description]
+            head (int, optional): [description]. Defaults to -1.
         """
         self.models = models
         self.d = dataset
