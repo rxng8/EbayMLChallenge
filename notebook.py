@@ -296,7 +296,7 @@ print("Done!")
 # %%
 
 print("Extracting every key to key_list and build model vector...")
-n_first_key_to_cluster = 5
+n_first_key_to_cluster = 7
 key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
 # models.keys() is
 # dict_keys(['brand', 'inseam', 'size type', "bottoms size women's", 'material'])
@@ -307,14 +307,16 @@ models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
 
 print("Building tree...")
 # Working from here
-birch_tree = BirchTree(d, 1, models, head=11000)
+head = 5000
+birch_tree = BirchTree(d, 1, models, head=head)
 tree = birch_tree.build_tree(verbose=False)
 
 birch_tree.save_birch_tree_to_binary(TREE_FOLDER_PATH)
 
 post_processor = PostProcessor(birch_tree)
 post_processor.process()
-# post_processor.export_tsv()
+
+post_processor.export_tsv(RESULT_FOLDER_PATH, 1, n_first_key_to_cluster, head)
 
 # %%
 # Cluster key brand
@@ -324,38 +326,22 @@ node12 = tree.children[2] # 5 data
 node13 = tree.children[3] # 2 data
 node14 = tree.children[4] # 1 data
 
-# %%
-
 len(node10.children[0].children)
-
-# %%
 
 childnode = tree.children[0]
 
-# %%
-
 len(tree.children[1].children[1].children)
-
-# %%
 
 print_list_data(d, tree.children[0].children[0].data_id_list)
 
-# %%
-
 # inspect clustering feature of node 13
 cf_node13 = tree.cf_children[3]
-# %%
-
-
-# %%
 
 node1 = tree.children[0]
 node2 = tree.children[1]
 node3 = tree.children[2]
 node4 = tree.children[3]
-# %%
 len(tree.children)
-# %%
 
 print(len(tree.data_id_list))
 print(len(node1.data_id_list))
@@ -400,6 +386,6 @@ len(post_processor.result)
 # %%
 
 
-print_list_data(d, ['57974', '58019'])
+print_list_data(d, ['56848', '62766'])
 
 # %%
