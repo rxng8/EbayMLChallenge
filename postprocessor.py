@@ -19,9 +19,9 @@ class PostProcessor:
         print("Start process...")
         
         self.queue_helper()
+        print("Done processing the tree! Successfully generate answer table in object variable.")
 
     def queue_helper(self):
-        print("Start queue helper...")
         queue: List[BirchNode] = []
         queue.append(self.bt.root)
         
