@@ -18,14 +18,14 @@ import sys
 # Include the current directory in notebook path
 sys.path.insert(0, './')
 
-from parser import Parser
-from query import DatasetQuery
-from dataset import Dataset
-from preprocessor import Preprocessor
-from data import Data
-from embedding import Embedding
-from birch import BirchNode, ClusteringFeature, BirchTree, BirchDriver
-from postprocessor import PostProcessor
+from .parser import Parser
+from .query import DatasetQuery
+from .dataset import Dataset
+from .preprocessor import Preprocessor
+from .data import Data
+from .embedding import Embedding
+from .birch import BirchNode, ClusteringFeature, BirchTree, BirchDriver
+from .postprocessor import PostProcessor
 
 # CONFIGS and CONSTANTS
 DTA_FOLDER_PATH = Path("dataset")

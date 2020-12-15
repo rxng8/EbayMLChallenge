@@ -3,8 +3,8 @@
 import codecs
 import sys
 
-from dataset import Dataset
-from data import Data
+from .dataset import Dataset
+from .data import Data
 
 class Crawler:
     def __init__(self):

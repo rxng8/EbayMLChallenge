@@ -1,4 +1,4 @@
-from data import Data
+from .data import Data
 from typing import List, Dict, Tuple
 import collections
 import random

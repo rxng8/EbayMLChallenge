@@ -22,17 +22,17 @@ import sys
 # Include the current directory in notebook path
 sys.path.insert(0, './')
 
-from parser import Parser
-from query import DatasetQuery
-from dataset import Dataset
-from preprocessor import Preprocessor
-from data import Data
-from embedding import Embedding
-from birch import BirchNode, ClusteringFeature, BirchTree, BirchDriver
-from postprocessor import PostProcessor
+from core.parser import Parser
+from core.query import DatasetQuery
+from core.dataset import Dataset
+from core.preprocessor import Preprocessor
+from core.data import Data
+from core.embedding import Embedding
+from core.birch import BirchNode, ClusteringFeature, BirchTree, BirchDriver
+from core.postprocessor import PostProcessor
 
 # CONFIGS and CONSTANTS
-DTA_FOLDER_PATH = Path("dataset")
+DTA_FOLDER_PATH = Path("./dataset")
 TRAIN_FILE_NAME = Path("mlchallenge_set_2021.tsv")
 TRAIN_FILE_PATH = DTA_FOLDER_PATH / TRAIN_FILE_NAME
 VALID_FILE_NAME = Path("mlchallenge_set_validation.tsv")
@@ -112,7 +112,6 @@ def test_parse_attributes():
 
     print(str(attr_data))
 
-from dataset import Dataset
 def get_dataset() -> Dataset:
     p = Parser(TRAIN_FILE_PATH)
     dataset = p.parse_data_file()
@@ -296,27 +295,40 @@ print("Done!")
 # %%
 
 print("Extracting every key to key_list and build model vector...")
-n_first_key_to_cluster = 7
-key_list = q.get_most_frequent_keys(1, n_first_key_to_cluster)[:, 0]
+n_first_key_to_cluster = 6
+category = 3
+key_list = q.get_most_frequent_keys(category, n_first_key_to_cluster)[:, 0]
+# I dont want euro size
+# key_list = [*key_list[0:7], *key_list[8:]]
+
 # models.keys() is
 # dict_keys(['brand', 'inseam', 'size type', "bottoms size women's", 'material'])
-models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, 1, key_list)
+models: Dict[str, Word2Vec] = Embedding.extract_keys_vocab(d, category, key_list)
+
+# %%
+
+key_list[:]
 
 
 # %%
 
 print("Building tree...")
 # Working from here
-head = 5000
-birch_tree = BirchTree(d, 1, models, head=head)
+head = -1
+birch_tree = BirchTree(d, category, models, head=head)
 tree = birch_tree.build_tree(verbose=False)
+
+# birch_tree.save_birch_tree_to_binary(TREE_FOLDER_PATH)
+
+post_processor = PostProcessor(birch_tree, starting_id=500000)
+post_processor.process()
+
+post_processor.export_tsv(RESULT_FOLDER_PATH, category, n_first_key_to_cluster, head)
+
+# %%
 
 birch_tree.save_birch_tree_to_binary(TREE_FOLDER_PATH)
 
-post_processor = PostProcessor(birch_tree)
-post_processor.process()
-
-post_processor.export_tsv(RESULT_FOLDER_PATH, 1, n_first_key_to_cluster, head)
 
 # %%
 # Cluster key brand
