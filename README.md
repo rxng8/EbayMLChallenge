@@ -8,6 +8,7 @@
 
 The analysis for the project is in the [`reports` folder](./reports/).
 
+I modify the method of Birch Tree, not using a branching factor but rather the fanout of each node is the number of generated clustering features. In each depth, I clusterize according to a key of the item attributes, i.e, in depth 2, I assign the data point in that node to the same cluster if the two items' attribute values of that node's key are the same.
 
 -----------
 
