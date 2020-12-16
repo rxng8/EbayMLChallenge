@@ -5,3 +5,5 @@ dataset
 trees
 results
 dataset.pkl
+**.tsv
+dataset/mlchallenge_set_2021.tsv
