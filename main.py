@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 import sys
 # Include the current directory in notebook path
-sys.path.insert(0, './')
+# sys.path.insert(0, './')
 
 from core.parser import Parser
 from core.query import DatasetQuery
@@ -108,7 +108,6 @@ def test_parse_attributes():
 
     print(str(attr_data))
 
-from dataset import Dataset
 def get_dataset() -> Dataset:
     p = Parser(TRAIN_FILE_PATH)
     dataset = p.parse_data_file()
