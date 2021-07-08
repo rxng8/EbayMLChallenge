@@ -401,3 +401,22 @@ len(post_processor.result)
 print_list_data(d, ['56848', '62766'])
 
 # %%
+
+
+# Connect csv
+
+tsv_path = ".\\results\\result_c1_-1_heads_7_keys.tsv"
+df = pd.DataFrame()
+for category, item_idx in d.category_map.items():
+    if category != 1:
+        arr = [[item_id, int(str(category)*8)] for item_id in item_idx]
+        tmp = pd.DataFrame(arr)
+        df = pd.concat([df, tmp])
+    else:
+        tmp = pd.read_csv(tsv_path, sep='\t')
+        df = pd.concat([df, tmp])
+
+df.to_csv(RESULT_FOLDER_PATH / "results", sep='\t', header=False, index=False)
+
+
+
